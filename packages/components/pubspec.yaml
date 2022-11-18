@@ -1,4 +1,4 @@
-name: core
+name: components
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  theme:
+    path: ../theme
 
 dev_dependencies:
   flutter_test:
@@ -19,6 +21,11 @@ dev_dependencies:
 
 
 flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/
+
 
                     
                                       

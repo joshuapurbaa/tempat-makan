@@ -2,20 +2,20 @@ import 'package:app_cache/app_cache.dart';
 import 'package:flutter/cupertino.dart';
 
 class AppStateManager extends ChangeNotifier {
-  bool _loggedIn = false;
+  bool _signedIn = false;
   bool _onboardingComplete = false;
   final _appCache = AppCache();
 
-  bool get isLoggedIn => _loggedIn;
+  bool get isSignedIn => _signedIn;
   bool get isOnboardingComplete => _onboardingComplete;
 
   Future<void> initializeApp() async {
-    _loggedIn = await _appCache.isUserLoggedIn();
+    _signedIn = await _appCache.isUserSignedIn();
     _onboardingComplete = await _appCache.didCompleteOnboarding();
   }
 
-  void login(String username, String password) async {
-    _loggedIn = true;
+  void signIn(String username, String password) async {
+    _signedIn = true;
     await _appCache.cacheUser();
     notifyListeners();
   }
@@ -26,8 +26,8 @@ class AppStateManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  void logout() async {
-    _loggedIn = false;
+  void signOut() async {
+    _signedIn = false;
     _onboardingComplete = false;
 
     await _appCache.invalidate();

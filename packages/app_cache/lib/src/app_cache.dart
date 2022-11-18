@@ -20,7 +20,7 @@ class AppCache {
     await prefs.setBool(kOnboarding, true);
   }
 
-  Future<bool> isUserLoggedIn() async {
+  Future<bool> isUserSignedIn() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(kUser) ?? false;
   }

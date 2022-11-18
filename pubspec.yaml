@@ -17,6 +17,17 @@ dependencies:
     path: packages/app_state_manager
   go_router: ^5.1.6
   provider: ^6.0.4
+  sign_in:
+    path: packages/features/sign_in
+  onboarding:
+    path: packages/features/onboarding
+  home:
+    path: packages/features/home
+  detail:
+    path: packages/features/detail
+  profile:
+    path: packages/features/profile
+  responsive_framework: ^0.2.0
 
 dev_dependencies:
   flutter_test:

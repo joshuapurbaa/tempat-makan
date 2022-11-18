@@ -1,0 +1,26 @@
+name: onboarding
+description: A new Flutter package project.
+publish_to: none
+
+environment:
+  sdk: '>=2.17.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  components:
+    path: ../../components
+  theme:
+    path: ../../theme
+  smooth_page_indicator: ^1.0.0+2
+  app_state_manager:
+    path: ../../app_state_manager
+  provider: ^6.0.4
+
+dev_dependencies:
+  very_good_analysis: ^3.0.1
+
+flutter:
+  generate: true
+  assets:
+    - assets/
