@@ -66,6 +66,7 @@ class DetailScrollableContent extends StatelessWidget {
                 image: AppStrings.detailDrink,
                 name: 'Es krim',
               ),
+              const Gaps(h: 90),
             ],
           ),
         );
