@@ -19,5 +19,7 @@
 - [ ] State Management 
 
 ## Architecture Proposal by [Resocoder](https://github.com/ResoCoder/flutter-tdd-clean-architecture-course)
+![image](https://user-images.githubusercontent.com/75546126/202653035-e07f30a9-41f5-4ed1-b93b-7af2204d5827.png)
+
 
 <br>
