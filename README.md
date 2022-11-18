@@ -9,7 +9,7 @@
 
 ## Feature ✅
 
-- [x] Theme Configuration : `System, Light, Dark`
+- [x] Theme Configuration : `Light`
 - [x] Login, Onboarding, Home, Detail, Profile Screen
 - [x] Navigation with [Go Router](https://pub.dev/packages/go_router)
 
