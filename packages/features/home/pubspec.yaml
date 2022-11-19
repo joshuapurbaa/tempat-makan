@@ -13,7 +13,11 @@ dependencies:
     path: ../../theme
   components:
     path: ../../components
+  core:
+    path: ../../../core
+    
   go_router: ^5.1.9
+  provider: ^6.0.4
     
 dev_dependencies:
   flutter_test:

@@ -1,22 +1,32 @@
 import 'package:components/components.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:theme/theme.dart';
 
 import 'widgets/detail_scrollable_content.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  const DetailScreen({
+    super.key,
+    required this.index,
+  });
+
+  final String index;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final restaurant =
+        Provider.of<RestaurantListNotifier>(context, listen: false)
+            .restaurant[int.parse(index)];
     return Scaffold(
       body: Stack(
         children: [
           SizedBox(
             height: size.height * 0.4,
             child: Image.network(
-              'https://restaurant-api.dicoding.dev/images/medium/14',
+              restaurant.pictureId,
               fit: BoxFit.cover,
             ),
           ),
@@ -31,7 +41,9 @@ class DetailScreen extends StatelessWidget {
               ),
             ),
           ),
-          const DetailScrollableContent(),
+          DetailScrollableContent(
+            restaurant: restaurant,
+          ),
         ],
       ),
       bottomSheet: Container(

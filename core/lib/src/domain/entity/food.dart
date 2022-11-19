@@ -6,5 +6,5 @@ class Food extends Equatable {
   const Food({required this.name});
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [name];
 }

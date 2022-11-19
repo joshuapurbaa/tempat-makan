@@ -14,7 +14,10 @@ class DetailContainerBorder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width * 0.75;
     return Container(
+      margin: const EdgeInsets.only(right: 10),
+      width: width,
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         border: Border.all(
@@ -44,6 +47,8 @@ class DetailContainerBorder extends StatelessWidget {
                 Text(
                   name,
                   style: Theme.of(context).textTheme.subtitle1,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   'Rp.20.000',

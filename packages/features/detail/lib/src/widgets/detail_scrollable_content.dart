@@ -1,4 +1,5 @@
 import 'package:components/components.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 import 'package:theme/theme.dart';
@@ -8,7 +9,10 @@ import 'food_container_border.dart';
 class DetailScrollableContent extends StatelessWidget {
   const DetailScrollableContent({
     Key? key,
+    required this.restaurant,
   }) : super(key: key);
+
+  final Restaurant restaurant;
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +33,16 @@ class DetailScrollableContent extends StatelessWidget {
             controller: scrollController,
             children: [
               Text(
-                'Melting Pot',
+                restaurant.name,
                 style: Theme.of(context).textTheme.headline5,
               ),
               Text(
-                'Medan',
+                restaurant.city,
                 style: Theme.of(context).textTheme.subtitle2,
               ),
               const Gaps(h: 20),
               ReadMoreText(
-                'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. ',
+                restaurant.description,
                 style: Theme.of(context).textTheme.bodyText2,
                 trimLines: 5,
                 moreStyle: Theme.of(context)
@@ -47,30 +51,74 @@ class DetailScrollableContent extends StatelessWidget {
                     ?.copyWith(color: AppColors.blue),
               ),
               const Gaps(h: 20),
-              Text(
-                'Food',
-                style: Theme.of(context).textTheme.headline6,
-              ),
-              const Gaps(h: 20),
-              const DetailContainerBorder(
-                image: AppStrings.detailFood,
-                name: 'Toastie salmon',
-              ),
-              const Gaps(h: 20),
-              Text(
-                'Drink',
-                style: Theme.of(context).textTheme.headline6,
-              ),
-              const Gaps(h: 20),
-              const DetailContainerBorder(
-                image: AppStrings.detailDrink,
-                name: 'Es krim',
+              FoodAndDrinkListView(
+                menus: restaurant.menus,
               ),
               const Gaps(h: 90),
             ],
           ),
         );
       },
+    );
+  }
+}
+
+class FoodAndDrinkListView extends StatelessWidget {
+  const FoodAndDrinkListView({
+    Key? key,
+    required this.menus,
+  }) : super(key: key);
+
+  final Menu menus;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 310,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Food',
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          const Gaps(h: 20),
+          Expanded(
+            child: ListView.builder(
+              primary: false,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: menus.foods.length,
+              itemBuilder: (context, index) {
+                return DetailContainerBorder(
+                  image: AppStrings.detailFood,
+                  name: menus.foods[index].name,
+                );
+              },
+            ),
+          ),
+          const Gaps(h: 20),
+          Text(
+            'Drink',
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          const Gaps(h: 20),
+          Expanded(
+            child: ListView.builder(
+              primary: false,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: menus.drinks.length,
+              itemBuilder: (context, index) {
+                return DetailContainerBorder(
+                  image: AppStrings.detailDrink,
+                  name: menus.drinks[index].name,
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

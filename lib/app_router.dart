@@ -34,8 +34,11 @@ class AppRouter {
         routes: [
           GoRoute(
             name: 'detail',
-            path: 'detail',
-            builder: (context, state) => const DetailScreen(),
+            path: 'detail/:index',
+            builder: (context, state) {
+              final index = state.params['index'] ?? '1';
+              return DetailScreen(index: index);
+            },
           ),
           GoRoute(
             name: 'profile',
