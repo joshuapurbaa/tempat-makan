@@ -1,9 +1,8 @@
-import 'package:core/src/domain/entity/restaurant.dart';
+import 'package:core/core.dart';
 
 import 'package:dartz/dartz.dart';
 
-import '../../utils/failure.dart';
-
 abstract class RestaurantRepository {
-  Future<Either<Failure, List<Restaurant>>> getRestaurantdata();
+  Future<Either<Failure, List<Restaurant>>> getRestaurantList();
+  Future<Either<Failure, RestaurantDetail>> getRestaurantDetail(String id);
 }

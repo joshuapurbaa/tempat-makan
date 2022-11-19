@@ -56,7 +56,7 @@ packages:
       path: "packages/components"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   core:
     dependency: "direct main"
     description:
@@ -178,7 +178,7 @@ packages:
     source: path
     version: "0.0.0"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       url: "https://pub.dartlang.org"
@@ -435,7 +435,7 @@ packages:
       path: "packages/features/sign_in"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -490,13 +490,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.12"
-  theme:
-    dependency: "direct main"
-    description:
-      path: "packages/theme"
-      relative: true
-    source: path
-    version: "0.0.1"
   typed_data:
     dependency: transitive
     description:

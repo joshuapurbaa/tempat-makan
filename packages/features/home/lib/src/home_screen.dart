@@ -1,3 +1,4 @@
+import 'package:components/components.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,12 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     Future.microtask(
       () => Provider.of<RestaurantListNotifier>(context, listen: false)
-        ..fetchRestaurantData(),
+        ..fetchRestaurantList(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
@@ -39,8 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
               switch (state) {
                 case RequestState.loading:
                 case RequestState.empty:
-                  return const Center(
-                    child: CircularProgressIndicator(),
+                  return Padding(
+                    padding: EdgeInsets.only(top: size.height * 0.3),
+                    child: const LoadingIndicator(),
                   );
                 case RequestState.loaded:
                   return Expanded(

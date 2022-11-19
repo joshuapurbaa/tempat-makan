@@ -1,7 +1,5 @@
 name: components
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: A Flutter Components package for tempat makan app
 publish_to: none
 
 environment:
@@ -11,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  theme:
-    path: ../theme
+  core:
+    path: ../../core
 
 dev_dependencies:
   flutter_test:

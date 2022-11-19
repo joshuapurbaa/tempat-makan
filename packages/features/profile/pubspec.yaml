@@ -1,5 +1,5 @@
 name: profile
-description: A new Flutter package project.
+description: A Flutter Profile package for tempat makan app
 publish_to: none
 
 environment:
@@ -9,14 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  theme:
-    path: ../../theme
+  core:
+    path: ../../../core
   components:
     path: ../../components
-  dotted_border: ^2.0.0+3
-  provider: ^6.0.4
   app_state_manager:
     path: ../../app_state_manager
+    
+  provider: ^6.0.4
+  dotted_border: ^2.0.0+3
     
 dev_dependencies:
   flutter_test:

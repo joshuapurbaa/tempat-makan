@@ -1,8 +1,8 @@
 import 'package:app_state_manager/app_state_manager.dart';
+import 'package:core/core.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:theme/theme.dart';
 
 class OnboardBottomRow extends StatelessWidget {
   const OnboardBottomRow({

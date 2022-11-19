@@ -6,10 +6,11 @@ part 'restaurant_response.g.dart';
 
 @JsonSerializable()
 class RestaurantResponse extends Equatable {
-  final List<RestaurantModel> restaurants;
+  @JsonKey(name: 'restaurants')
+  final List<RestaurantModel> restaurantList;
 
   const RestaurantResponse({
-    required this.restaurants,
+    required this.restaurantList,
   });
 
   factory RestaurantResponse.fromJson(Map<String, dynamic> json) =>
@@ -17,5 +18,5 @@ class RestaurantResponse extends Equatable {
   Map<String, dynamic> toJson() => _$RestaurantResponseToJson(this);
 
   @override
-  List<Object?> get props => [restaurants];
+  List<Object?> get props => [restaurantList];
 }

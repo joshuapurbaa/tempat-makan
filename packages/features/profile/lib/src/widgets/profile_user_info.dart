@@ -1,7 +1,7 @@
 import 'package:components/components.dart';
+import 'package:core/core.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:theme/theme.dart';
 
 class ProfileUserInfo extends StatelessWidget {
   const ProfileUserInfo({

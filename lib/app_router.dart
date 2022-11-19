@@ -34,10 +34,10 @@ class AppRouter {
         routes: [
           GoRoute(
             name: 'detail',
-            path: 'detail/:index',
+            path: 'detail/:id',
             builder: (context, state) {
-              final index = state.params['index'] ?? '1';
-              return DetailScreen(index: index);
+              final id = state.params['id'] ?? 'rqdv5juczeskfw1e867';
+              return DetailScreen(id: id);
             },
           ),
           GoRoute(

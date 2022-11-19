@@ -1,5 +1,5 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:theme/theme.dart';
 
 class TextRow extends StatelessWidget {
   const TextRow({

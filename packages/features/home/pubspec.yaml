@@ -1,5 +1,5 @@
 name: home
-description: A Flutter package for home.
+description: A Flutter Home package for tempat makan app.
 publish_to: none
 
 environment:
@@ -9,8 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  theme:
-    path: ../../theme
   components:
     path: ../../components
   core:

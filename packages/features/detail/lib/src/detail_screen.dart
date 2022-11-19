@@ -2,49 +2,77 @@ import 'package:components/components.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theme/theme.dart';
 
 import 'widgets/detail_scrollable_content.dart';
 
-class DetailScreen extends StatelessWidget {
+class DetailScreen extends StatefulWidget {
   const DetailScreen({
     super.key,
-    required this.index,
+    required this.id,
   });
 
-  final String index;
+  final String id;
+
+  @override
+  State<DetailScreen> createState() => _DetailScreenState();
+}
+
+class _DetailScreenState extends State<DetailScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    Future.microtask(
+      () => Provider.of<RestaurantDetailNotifier>(context, listen: false)
+        ..fetchRestaurantDetail(widget.id),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final restaurant =
-        Provider.of<RestaurantListNotifier>(context, listen: false)
-            .restaurant[int.parse(index)];
+
     return Scaffold(
-      body: Stack(
-        children: [
-          SizedBox(
-            height: size.height * 0.4,
-            child: Image.network(
-              restaurant.pictureId,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Positioned(
-            top: 60,
-            left: 20,
-            child: GestureDetector(
-              onTap: () => Navigator.pop(context),
-              child: const ContainerIcon(
-                backgroundColor: AppColors.greyColor2,
-                icon: Icons.arrow_back_rounded,
-              ),
-            ),
-          ),
-          DetailScrollableContent(
-            restaurant: restaurant,
-          ),
-        ],
+      body: Consumer<RestaurantDetailNotifier>(
+        builder: (context, detail, child) {
+          final state = detail.restaurantDetailState;
+          switch (state) {
+            case RequestState.loading:
+            case RequestState.empty:
+              return const LoadingIndicator();
+            case RequestState.loaded:
+              final restaurantDetail = detail.restaurantDetail;
+              return Stack(
+                children: [
+                  SizedBox(
+                    height: size.height * 0.4,
+                    child: Image.network(
+                      '${AppStrings.mediumImageUrl}${restaurantDetail.pictureId}',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned(
+                    top: 60,
+                    left: 20,
+                    child: GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: const ContainerIcon(
+                        backgroundColor: AppColors.greyColor2,
+                        icon: Icons.arrow_back_rounded,
+                      ),
+                    ),
+                  ),
+                  DetailScrollableContent(
+                    detail: restaurantDetail,
+                  ),
+                ],
+              );
+            case RequestState.error:
+              return const Text('ERROR');
+            default:
+              return const Text('please log in later');
+          }
+        },
       ),
       bottomSheet: Container(
         height: 80,

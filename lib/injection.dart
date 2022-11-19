@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:get_it/get_it.dart';
+import 'package:http/http.dart' as http;
 
 final locator = GetIt.instance;
 
@@ -10,19 +11,28 @@ void init() {
       getRestaurantData: locator(),
     ),
   );
+  locator.registerFactory(
+    () => RestaurantDetailNotifier(
+      getRestaurantDetail: locator(),
+    ),
+  );
 
   // usecases
-  locator.registerLazySingleton(() => GetRestaurantData(locator()));
+  locator.registerLazySingleton(() => GetRestaurantList(locator()));
+  locator.registerLazySingleton(() => GetRestaurantDetail(locator()));
 
   // repository
   locator.registerLazySingleton<RestaurantRepository>(
     () => RestaurantRepositoryImpl(
-      restaurantLocalDataSource: locator(),
+      remoteDataSource: locator(),
     ),
   );
 
   // data sources
-  locator.registerLazySingleton<RestaurantLocalDataSource>(
-    () => RestaurantLocalDataSourceImpl(),
+  locator.registerLazySingleton<RestaurantRemoteDataSource>(
+    () => RestaurantRemoteDataSourceImpl(client: locator()),
   );
+
+  // external
+  locator.registerLazySingleton(() => http.Client());
 }

@@ -1,7 +1,5 @@
 name: sign_in
-description: A new Flutter package project.
-version: 0.0.1
-homepage:
+description: A Flutter Sign In package for tempat makan app
 publish_to: none
 
 environment:
@@ -11,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  theme:
-    path: ../../theme
+  core:
+    path: ../../../core
   components:
     path: ../../components
   app_state_manager:

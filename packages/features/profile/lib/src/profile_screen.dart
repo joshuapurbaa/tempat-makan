@@ -1,8 +1,8 @@
 import 'package:app_state_manager/app_state_manager.dart';
 import 'package:components/components.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theme/theme.dart';
 
 import 'widgets/profile_user_info.dart';
 import 'widgets/profile_header.dart';

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:tempat_makan/app_router.dart';
-import 'package:theme/theme.dart';
 import 'injection.dart' as di;
 
 void main() async {
@@ -40,6 +39,9 @@ class _TempatMakanState extends State<TempatMakan> {
         ),
         ChangeNotifierProvider(
           create: (_) => di.locator<RestaurantListNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<RestaurantDetailNotifier>(),
         ),
       ],
       child: MaterialApp.router(

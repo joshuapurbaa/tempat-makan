@@ -1,24 +1,32 @@
 import 'dart:io';
 
-import 'package:core/src/data/datasources/restaurant_local_data_source.dart';
-import 'package:core/src/domain/entity/restaurant.dart';
+import 'package:core/core.dart';
 
-import 'package:core/src/domain/repositories/restaurant_respository.dart';
 import 'package:dartz/dartz.dart';
-import 'package:core/src/utils/failure.dart';
 
 class RestaurantRepositoryImpl implements RestaurantRepository {
-  final RestaurantLocalDataSource restaurantLocalDataSource;
+  final RestaurantRemoteDataSource remoteDataSource;
 
-  RestaurantRepositoryImpl({required this.restaurantLocalDataSource});
+  RestaurantRepositoryImpl({required this.remoteDataSource});
 
   @override
-  Future<Either<Failure, List<Restaurant>>> getRestaurantdata() async {
+  Future<Either<Failure, List<Restaurant>>> getRestaurantList() async {
     try {
-      final result = await restaurantLocalDataSource.getRestaurantList();
+      final result = await remoteDataSource.getRestaurantList();
       return Right(result.map((model) => model.toEntity()).toList());
     } on SocketException {
-      return const Left(ConnectionFailure('Failed to get data'));
+      return const Left(ConnectionFailure('Failed to connect to the network'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, RestaurantDetail>> getRestaurantDetail(
+      String id) async {
+    try {
+      final result = await remoteDataSource.getRestaurantDetail(id);
+      return Right(result.toEntity());
+    } on SocketException {
+      return const Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 }

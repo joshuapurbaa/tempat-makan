@@ -1,5 +1,5 @@
 name: tempat_makan
-description: A new Flutter project.
+description: A Flutter Root project.
 
 publish_to: 'none' 
 version: 1.0.0+1
@@ -11,8 +11,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  theme:
-    path: packages/theme
   app_state_manager:
     path: packages/app_state_manager
   go_router: ^5.1.6
@@ -29,9 +27,9 @@ dependencies:
     path: packages/features/profile
   core:
     path: core
-    
   responsive_framework: ^0.2.0
   get_it: ^7.2.0
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -41,5 +39,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/

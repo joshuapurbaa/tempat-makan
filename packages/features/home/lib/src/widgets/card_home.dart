@@ -2,7 +2,6 @@ import 'package:components/components.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:theme/theme.dart';
 
 class CardHome extends StatelessWidget {
   const CardHome({
@@ -23,7 +22,7 @@ class CardHome extends StatelessWidget {
             context.goNamed(
               'detail',
               params: {
-                'index': index.toString(),
+                'id': restaurant.id,
               },
             );
           },
@@ -40,7 +39,7 @@ class CardHome extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.network(
-                      restaurant.pictureId,
+                      '${AppStrings.smallImageUrl}${restaurant.pictureId}',
                       fit: BoxFit.cover,
                     ),
                   ),

@@ -1,5 +1,5 @@
 import 'package:core/src/domain/entity/restaurant.dart';
-import 'package:core/src/domain/usecases/get_restaurant_data.dart';
+import 'package:core/src/domain/usecases/get_restaurant_list.dart';
 import 'package:core/src/utils/state_enum.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -14,9 +14,9 @@ class RestaurantListNotifier extends ChangeNotifier {
   String get message => _message;
 
   RestaurantListNotifier({required this.getRestaurantData});
-  final GetRestaurantData getRestaurantData;
+  final GetRestaurantList getRestaurantData;
 
-  Future<void> fetchRestaurantData() async {
+  Future<void> fetchRestaurantList() async {
     _restaurantState = RequestState.loading;
     notifyListeners();
 
