@@ -1,5 +1,5 @@
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 class TextRow extends StatelessWidget {
   const TextRow({
@@ -15,21 +15,22 @@ class TextRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final text = Theme.of(context).textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           textRow1,
-          style: Theme.of(context).textTheme.caption,
+          style: text.caption,
         ),
         GestureDetector(
           onTap: onTap,
           child: Text(
             textRow2,
-            style: Theme.of(context).textTheme.caption!.copyWith(
-                  color: AppColors.darkBlue,
-                  fontWeight: FontWeight.bold,
-                ),
+            style: text.caption!.copyWith(
+              color: AppPalette.darkBlue,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],

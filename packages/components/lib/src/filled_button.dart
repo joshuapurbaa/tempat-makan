@@ -1,5 +1,5 @@
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 class FilledButton extends StatelessWidget {
   const FilledButton({
@@ -15,13 +15,13 @@ class FilledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 60,
+      height: AppDimens.space60,
       child: MaterialButton(
         onPressed: onTap,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(AppDimens.space15),
         ),
-        color: AppColors.darkBlue,
+        color: AppPalette.darkBlue,
         child: Text(
           buttonType,
           style: Theme.of(context).textTheme.button,

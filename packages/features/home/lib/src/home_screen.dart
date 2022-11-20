@@ -2,6 +2,7 @@ import 'package:components/components.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:resources/resources.dart';
 
 import 'widgets/card_home.dart';
 import 'widgets/home_header.dart';
@@ -26,10 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: AppDimens.toolbarH,
         title: const HomeHeader(),
       ),
       body: Column(
@@ -41,9 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
               switch (state) {
                 case RequestState.loading:
                 case RequestState.empty:
-                  return Padding(
-                    padding: EdgeInsets.only(top: size.height * 0.3),
-                    child: const LoadingIndicator(),
+                  return const PaddingOnlyWithDimens(
+                    top: 30,
+                    child: LoadingIndicator(),
                   );
                 case RequestState.loaded:
                   return Expanded(

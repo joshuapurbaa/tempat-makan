@@ -1,5 +1,5 @@
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 class LoadingIndicator extends StatelessWidget {
   const LoadingIndicator({
@@ -10,7 +10,7 @@ class LoadingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: CircularProgressIndicator(
-        color: AppColors.darkBlue,
+        color: AppPalette.darkBlue,
       ),
     );
   }

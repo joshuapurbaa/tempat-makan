@@ -1,7 +1,7 @@
 import 'package:components/components.dart';
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:resources/resources.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -12,12 +12,12 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Gaps(w: 20),
+        const GapsWithDimens(w: 20),
         const ContainerIcon(
-          backgroundColor: AppColors.greyColor2,
+          backgroundColor: AppPalette.greyColor2,
           icon: Icons.location_pin,
         ),
-        const Gaps(w: 10),
+        const GapsWithDimens(w: 10),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,10 +34,10 @@ class HomeHeader extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 70,
-          height: 70,
+          width: AppDimens.space70,
+          height: AppDimens.space70,
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(AppDimens.space20),
             child: GestureDetector(
               onTap: () => context.goNamed('profile'),
               child: Image.asset(
@@ -48,7 +48,7 @@ class HomeHeader extends StatelessWidget {
             ),
           ),
         ),
-        const Gaps(w: 20),
+        const GapsWithDimens(w: 20),
       ],
     );
   }

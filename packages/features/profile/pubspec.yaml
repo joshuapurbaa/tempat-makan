@@ -15,7 +15,8 @@ dependencies:
     path: ../../components
   app_state_manager:
     path: ../../app_state_manager
-    
+  resources:
+    path: ../../resources
   provider: ^6.0.4
   dotted_border: ^2.0.0+3
     

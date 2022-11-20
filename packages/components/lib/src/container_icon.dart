@@ -1,5 +1,5 @@
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 class ContainerIcon extends StatelessWidget {
   const ContainerIcon({
@@ -8,7 +8,7 @@ class ContainerIcon extends StatelessWidget {
     required this.icon,
     this.height = 60,
     this.width = 60,
-    this.iconColor = AppColors.darkBlue,
+    this.iconColor = AppPalette.darkBlue,
   }) : super(key: key);
 
   final Color backgroundColor;
@@ -21,7 +21,7 @@ class ContainerIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppDimens.space20),
       ),
       elevation: 4,
       child: Container(
@@ -29,12 +29,12 @@ class ContainerIcon extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(AppDimens.space20),
         ),
         child: Icon(
           icon,
           color: iconColor,
-          size: 30,
+          size: AppDimens.space30,
         ),
       ),
     );

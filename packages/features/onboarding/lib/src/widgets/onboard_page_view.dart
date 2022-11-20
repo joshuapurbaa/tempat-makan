@@ -13,8 +13,9 @@ class OnboardPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20),
+    return PaddingOnlyWithDimens(
+      left: 20,
+      right: 20,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,9 +26,7 @@ class OnboardPageView extends StatelessWidget {
               package: 'onboarding',
             ),
           ),
-          Gaps(
-            h: 40,
-          ),
+          GapsWithDimens(h: 40),
           Text(
             headline,
             style: Theme.of(context).textTheme.headline4,

@@ -1,4 +1,5 @@
 class AppStrings {
+  AppStrings._();
   // Signin & Signup
   static const String loginTextRow1 = 'Not a member? ';
   static const String loginTextRow2 = 'Sign Up';

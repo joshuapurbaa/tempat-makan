@@ -1,7 +1,7 @@
 import 'package:app_state_manager/app_state_manager.dart';
-import 'package:core/core.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardBottomRow extends StatelessWidget {
@@ -28,13 +28,13 @@ class OnboardBottomRow extends StatelessWidget {
           },
           child: Icon(
             Icons.chevron_right_rounded,
-            color: AppColors.whiteColor,
-            size: 40,
+            color: AppPalette.whiteColor,
+            size: AppDimens.space40,
           ),
-          padding: EdgeInsets.symmetric(vertical: 4),
-          color: AppColors.darkBlue,
+          padding: EdgeInsets.symmetric(vertical: AppDimens.space4),
+          color: AppPalette.darkBlue,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(AppDimens.space50),
           ),
         )
       ],

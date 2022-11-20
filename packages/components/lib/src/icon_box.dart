@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 class IconBox extends StatelessWidget {
   const IconBox({
@@ -11,20 +12,19 @@ class IconBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 10,
+      padding: EdgeInsets.symmetric(
+        horizontal: AppDimens.space10,
+        vertical: AppDimens.space10,
       ),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppDimens.space10),
       ),
-      // cacheWidth & cacheHeight untuk mengatasi image yang oversized
       child: Image.asset(
         imageAsset,
         cacheWidth: 60,
         cacheHeight: 60,
-        width: 30,
+        width: AppDimens.space30,
         package: 'components',
       ),
     );

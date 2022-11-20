@@ -1,7 +1,7 @@
 import 'package:components/components.dart';
-import 'package:core/core.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 class ProfileUserInfo extends StatelessWidget {
   const ProfileUserInfo({
@@ -14,39 +14,39 @@ class ProfileUserInfo extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 140,
-            width: 140,
+            height: AppDimens.profileUserH,
+            width: AppDimens.profileUserH,
             child: Stack(
               children: [
                 Align(
                   alignment: Alignment.topCenter,
                   child: DottedBorder(
-                    color: AppColors.blue,
+                    color: AppPalette.blue,
                     strokeCap: StrokeCap.round,
                     dashPattern: const [15],
                     borderType: BorderType.Circle,
-                    padding: const EdgeInsets.all(5),
+                    padding: EdgeInsets.all(AppDimens.space5),
                     strokeWidth: 2.5,
-                    child: const CircleAvatar(
-                      radius: 55,
-                      backgroundImage: AssetImage(
+                    child: CircleAvatar(
+                      radius: AppDimens.space55,
+                      backgroundImage: const AssetImage(
                         AppStrings.profilePerson,
                         package: 'profile',
                       ),
                     ),
                   ),
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.bottomCenter,
                   child: CircleAvatar(
-                    radius: 24,
-                    backgroundColor: AppColors.whiteColor,
+                    radius: AppDimens.space24,
+                    backgroundColor: AppPalette.whiteColor,
                     child: CircleAvatar(
-                      backgroundColor: AppColors.darkBlue,
-                      radius: 20,
+                      backgroundColor: AppPalette.darkBlue,
+                      radius: AppDimens.space20,
                       child: Icon(
                         Icons.edit_rounded,
-                        size: 20,
+                        size: AppDimens.space20,
                       ),
                     ),
                   ),
@@ -54,12 +54,12 @@ class ProfileUserInfo extends StatelessWidget {
               ],
             ),
           ),
-          const Gaps(h: 10),
+          const GapsWithDimens(h: 10),
           Text(
             'Adrian',
             style: Theme.of(context).textTheme.headline6,
           ),
-          const Gaps(h: 5),
+          const GapsWithDimens(h: 5),
           Text(
             '082212345678',
             style: Theme.of(context).textTheme.subtitle2,

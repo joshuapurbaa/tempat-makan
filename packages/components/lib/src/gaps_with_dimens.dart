@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Gaps extends StatelessWidget {
-  const Gaps({
+class GapsWithDimens extends StatelessWidget {
+  const GapsWithDimens({
     super.key,
     this.h = 0.0,
     this.w = 0.0,
@@ -13,8 +14,8 @@ class Gaps extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: h,
-      width: w,
+      height: h.h,
+      width: w.w,
     );
   }
 }

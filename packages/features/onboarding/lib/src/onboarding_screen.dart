@@ -1,5 +1,6 @@
-import 'package:core/core.dart';
+import 'package:components/components.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 import 'widgets/onboard_bottom_row.dart';
 import 'widgets/onboard_page_view.dart';
@@ -38,11 +39,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 20,
-              ),
+            PaddingSymetricWithDimens(
+              horizontal: 20,
+              vertical: 20,
               child: OnboardBottomRow(controller: controller),
             ),
           ],

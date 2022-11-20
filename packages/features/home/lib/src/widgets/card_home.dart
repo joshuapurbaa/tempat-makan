@@ -2,6 +2,7 @@ import 'package:components/components.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:resources/resources.dart';
 
 class CardHome extends StatelessWidget {
   const CardHome({
@@ -13,6 +14,7 @@ class CardHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final text = Theme.of(context).textTheme;
     return ListView.builder(
       itemCount: restaurants.length,
       itemBuilder: (context, index) {
@@ -27,17 +29,17 @@ class CardHome extends StatelessWidget {
             );
           },
           child: SizedBox(
-            height: 250,
+            height: AppDimens.cardHomeH,
             child: Card(
-              margin: const EdgeInsets.all(20),
+              margin: EdgeInsets.all(AppDimens.space20),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(AppDimens.space20),
               ),
               child: Stack(
                 fit: StackFit.expand,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(AppDimens.space20),
                     child: Image.network(
                       '${AppStrings.smallImageUrl}${restaurant.pictureId}',
                       fit: BoxFit.cover,
@@ -46,16 +48,16 @@ class CardHome extends StatelessWidget {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
-                      height: 60,
-                      padding: const EdgeInsets.only(
-                        left: 20,
-                        top: 10,
-                        right: 20,
+                      height: AppDimens.space60,
+                      padding: EdgeInsets.only(
+                        left: AppDimens.space20,
+                        top: AppDimens.space10,
+                        right: AppDimens.space20,
                       ),
-                      decoration: const BoxDecoration(
-                        color: AppColors.whiteColor,
+                      decoration: BoxDecoration(
+                        color: AppPalette.whiteColor,
                         borderRadius: BorderRadius.vertical(
-                          bottom: Radius.circular(20),
+                          bottom: Radius.circular(AppDimens.space20),
                         ),
                       ),
                       child: Column(
@@ -63,14 +65,14 @@ class CardHome extends StatelessWidget {
                         children: [
                           Text(
                             restaurant.name,
-                            style: Theme.of(context).textTheme.subtitle1,
+                            style: text.subtitle1,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 restaurant.city,
-                                style: Theme.of(context).textTheme.subtitle2,
+                                style: text.subtitle2,
                               ),
                               Row(
                                 children: [
@@ -78,11 +80,10 @@ class CardHome extends StatelessWidget {
                                     Icons.star_rounded,
                                     color: Colors.orange,
                                   ),
-                                  const Gaps(w: 5),
+                                  const GapsWithDimens(w: 5),
                                   Text(
-                                    '4.8',
-                                    style:
-                                        Theme.of(context).textTheme.subtitle1,
+                                    restaurant.rating.toString(),
+                                    style: text.subtitle1,
                                   )
                                 ],
                               )

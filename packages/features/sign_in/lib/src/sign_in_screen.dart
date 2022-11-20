@@ -1,8 +1,8 @@
 import 'package:app_state_manager/app_state_manager.dart';
 import 'package:components/components.dart';
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:resources/resources.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -28,11 +28,9 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.greyColor,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 30,
-        ),
+      backgroundColor: AppPalette.greyColor,
+      body: PaddingSymetricWithDimens(
+        horizontal: 30,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -42,14 +40,14 @@ class _SignInScreenState extends State<SignInScreen> {
                 style: Theme.of(context).textTheme.headline3,
               ),
             ),
-            const Gaps(h: 40),
+            const GapsWithDimens(h: 40),
             Form(
               key: _formKey,
               child: Column(
                 children: [
                   TextFormField(
                     keyboardType: TextInputType.text,
-                    cursorColor: AppColors.darkBlue,
+                    cursorColor: AppPalette.darkBlue,
                     textCapitalization: TextCapitalization.none,
                     autocorrect: false,
                     decoration: const InputDecoration(
@@ -57,10 +55,10 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     controller: _usernameController,
                   ),
-                  const Gaps(h: 20),
+                  const GapsWithDimens(h: 20),
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
-                    cursorColor: AppColors.darkBlue,
+                    cursorColor: AppPalette.darkBlue,
                     obscureText: true,
                     textCapitalization: TextCapitalization.none,
                     autocorrect: false,
@@ -72,7 +70,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ],
               ),
             ),
-            const Gaps(h: 40),
+            const GapsWithDimens(h: 40),
             FilledButton(
               onTap: () {
                 Provider.of<AppStateManager>(context, listen: false)
@@ -80,16 +78,16 @@ class _SignInScreenState extends State<SignInScreen> {
               },
               buttonType: 'Sign In',
             ),
-            const Gaps(h: 40),
+            const GapsWithDimens(h: 40),
             Center(
               child: Text(
                 AppStrings.or,
                 style: Theme.of(context).textTheme.caption,
               ),
             ),
-            const Gaps(h: 40),
+            const GapsWithDimens(h: 40),
             const LoginOption(),
-            const Gaps(h: 40),
+            const GapsWithDimens(h: 40),
             TextRow(
               textRow1: AppStrings.loginTextRow1,
               textRow2: AppStrings.loginTextRow2,

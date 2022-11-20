@@ -1,94 +1,96 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'app_colors.dart';
+import 'package:resources/resources.dart';
 
 class AppTheme {
+  AppTheme._();
+
   static TextTheme lighTextTheme = TextTheme(
     headline1: GoogleFonts.openSans(
-      fontSize: 93,
+      fontSize: AppDimens.h1,
       fontWeight: FontWeight.w300,
       letterSpacing: -1.5,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     headline2: GoogleFonts.openSans(
-      fontSize: 58,
+      fontSize: AppDimens.h2,
       fontWeight: FontWeight.w300,
       letterSpacing: -0.5,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     // Sign In
     headline3: GoogleFonts.openSans(
-      fontSize: 46,
+      fontSize: AppDimens.h3,
       fontWeight: FontWeight.w600,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     // Onboarding
     headline4: GoogleFonts.openSans(
-      fontSize: 33,
+      fontSize: AppDimens.h4,
       fontWeight: FontWeight.w700,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     // Detail
     headline5: GoogleFonts.openSans(
-      fontSize: 27,
+      fontSize: AppDimens.h5,
       fontWeight: FontWeight.w800,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     // Detail
     headline6: GoogleFonts.openSans(
-      fontSize: 24,
+      fontSize: AppDimens.h6,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.15,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     // Home: Header, card
     subtitle1: GoogleFonts.openSans(
-      fontSize: 17,
+      fontSize: AppDimens.subtitle1,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.15,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     // Header
     subtitle2: GoogleFonts.openSans(
-      fontSize: 15,
+      fontSize: AppDimens.subtitle2,
       fontWeight: FontWeight.w500,
       letterSpacing: 0.15,
-      color: AppColors.darkBlue.withOpacity(0.3),
+      color: AppPalette.darkBlue.withOpacity(0.3),
     ),
     // Home: textfield
     bodyText1: GoogleFonts.poppins(
-      fontSize: 15,
+      fontSize: AppDimens.body1,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.5,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     // Detail
     bodyText2: GoogleFonts.poppins(
-      fontSize: 15,
+      fontSize: AppDimens.body2,
       fontWeight: FontWeight.w500,
       letterSpacing: 0.25,
-      color: AppColors.darkBlue.withOpacity(0.7),
+      color: AppPalette.darkBlue.withOpacity(0.7),
     ),
     // Detail
     button: GoogleFonts.poppins(
-      fontSize: 16,
+      fontSize: AppDimens.button,
       fontWeight: FontWeight.w400,
       letterSpacing: 1.25,
-      color: AppColors.whiteColor,
+      color: AppPalette.whiteColor,
     ),
+    // Detail
     caption: GoogleFonts.poppins(
-      fontSize: 12,
-      fontWeight: FontWeight.w400,
+      fontSize: AppDimens.caption,
+      fontWeight: FontWeight.w500,
       letterSpacing: 0.4,
-      color: AppColors.darkBlue,
+      color: AppPalette.darkBlue,
     ),
     overline: GoogleFonts.poppins(
-      fontSize: 10,
+      fontSize: AppDimens.overline,
       fontWeight: FontWeight.w400,
       letterSpacing: 1.5,
-      color: Colors.black,
+      color: AppPalette.darkBlue,
     ),
   );
   static TextTheme darkTextTheme = TextTheme(
@@ -183,24 +185,25 @@ class AppTheme {
       ),
       textTheme: lighTextTheme,
       inputDecorationTheme: InputDecorationTheme(
-        prefixIconColor: AppColors.darkBlue,
+        prefixIconColor: AppPalette.darkBlue,
         isDense: true,
         contentPadding: const EdgeInsets.fromLTRB(25, 20, 25, 20),
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(15),
         ),
-        fillColor: AppColors.greyColor2,
+        fillColor: AppPalette.greyColor2,
         filled: true,
       ),
       bottomSheetTheme: const BottomSheetThemeData(
-        backgroundColor: AppColors.whiteColor,
+        backgroundColor: AppPalette.whiteColor,
         elevation: 0,
       ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
+          padding: const EdgeInsets.all(10),
           elevation: 4,
-          backgroundColor: AppColors.darkBlue,
+          backgroundColor: AppPalette.darkBlue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),

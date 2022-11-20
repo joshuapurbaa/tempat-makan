@@ -1,6 +1,7 @@
 import 'package:components/components.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 import 'food_container_border.dart';
 
@@ -14,16 +15,17 @@ class FoodAndDrinkListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final text = Theme.of(context).textTheme;
     return SizedBox(
-      height: 310,
+      height: AppDimens.detailFoodDrinkListViewH,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Food',
-            style: Theme.of(context).textTheme.headline6,
+            style: text.headline6,
           ),
-          const Gaps(h: 20),
+          const GapsWithDimens(h: 10),
           Expanded(
             child: ListView.builder(
               primary: false,
@@ -38,12 +40,12 @@ class FoodAndDrinkListView extends StatelessWidget {
               },
             ),
           ),
-          const Gaps(h: 20),
+          const GapsWithDimens(h: 20),
           Text(
             'Drink',
-            style: Theme.of(context).textTheme.headline6,
+            style: text.headline6,
           ),
-          const Gaps(h: 20),
+          const GapsWithDimens(h: 10),
           Expanded(
             child: ListView.builder(
               primary: false,

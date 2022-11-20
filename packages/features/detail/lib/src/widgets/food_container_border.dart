@@ -1,6 +1,6 @@
 import 'package:components/components.dart';
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 class DetailContainerBorder extends StatelessWidget {
   const DetailContainerBorder({
@@ -14,24 +14,27 @@ class DetailContainerBorder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width * 0.75;
+    final width = MediaQuery.of(context).size.width * 0.55;
+    final text = Theme.of(context).textTheme;
     return Container(
-      margin: const EdgeInsets.only(right: 10),
+      margin: EdgeInsets.only(right: AppDimens.space10),
       width: width,
-      padding: const EdgeInsets.all(15),
+      padding: EdgeInsets.all(AppDimens.space10),
       decoration: BoxDecoration(
         border: Border.all(
-          color: AppColors.darkBlue.withOpacity(0.2),
+          color: AppPalette.darkBlue.withOpacity(0.2),
         ),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppDimens.space20),
       ),
       child: Row(
         children: [
           SizedBox(
-            height: 60,
-            width: 60,
+            height: AppDimens.space60,
+            width: AppDimens.space60,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(
+                AppDimens.space20,
+              ),
               child: Image.asset(
                 image,
                 package: 'detail',
@@ -39,29 +42,30 @@ class DetailContainerBorder extends StatelessWidget {
               ),
             ),
           ),
-          const Gaps(w: 10),
+          const GapsWithDimens(w: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   name,
-                  style: Theme.of(context).textTheme.subtitle1,
-                  maxLines: 1,
+                  style: text.subtitle1,
+                  maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   'Rp.20.000',
-                  style: Theme.of(context).textTheme.subtitle2,
+                  style: text.subtitle2,
                 )
               ],
             ),
           ),
-          const ContainerIcon(
-            backgroundColor: AppColors.yellow,
+          ContainerIcon(
+            backgroundColor: AppPalette.yellow,
             icon: Icons.add,
-            height: 50,
-            width: 50,
+            height: AppDimens.space50,
+            width: AppDimens.space50,
           )
         ],
       ),

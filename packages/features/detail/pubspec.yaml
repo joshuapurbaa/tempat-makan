@@ -13,6 +13,8 @@ dependencies:
     path: ../../components
   core:
     path: ../../../core
+  resources:
+    path: ../../resources
   readmore: ^2.2.0
   provider: ^6.0.4
 

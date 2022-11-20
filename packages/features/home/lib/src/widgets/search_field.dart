@@ -1,6 +1,6 @@
 import 'package:components/components.dart';
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:resources/resources.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({
@@ -9,31 +9,37 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+    return PaddingSymetricWithDimens(
+      horizontal: 20,
       child: Row(
         children: [
           Expanded(
             child: TextField(
               keyboardType: TextInputType.text,
-              cursorColor: AppColors.darkBlue,
+              cursorColor: AppPalette.darkBlue,
               decoration: InputDecoration(
-                prefixIcon: const Padding(
-                  padding: EdgeInsets.only(left: 20, right: 10),
+                prefixIcon: PaddingOnlyWithDimens(
+                  left: 20,
+                  right: 10,
                   child: Icon(
                     Icons.search_rounded,
-                    size: 30,
+                    size: AppDimens.space30,
                   ),
                 ),
-                contentPadding: const EdgeInsets.symmetric(vertical: 24),
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: AppDimens.space24,
+                ),
                 hintText: AppStrings.homeHintext,
-                hintStyle: Theme.of(context).textTheme.bodyText1,
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .bodyText1
+                    ?.copyWith(color: Colors.grey),
               ),
             ),
           ),
-          const Gaps(w: 10),
+          const GapsWithDimens(w: 10),
           const ContainerIcon(
-            backgroundColor: AppColors.yellow,
+            backgroundColor: AppPalette.yellow,
             icon: Icons.filter_list,
           )
         ],

@@ -13,6 +13,8 @@ dependencies:
     path: ../../components
   core:
     path: ../../../core
+  resources:
+    path: ../../resources
     
   go_router: ^5.1.9
   provider: ^6.0.4
