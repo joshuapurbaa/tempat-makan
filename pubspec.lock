@@ -169,7 +169,7 @@ packages:
       name: go_router
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.1.9"
+    version: "5.1.10"
   google_fonts:
     dependency: transitive
     description:
@@ -377,6 +377,13 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/resources"
+      relative: true
+    source: path
+    version: "0.0.0"
+  search:
+    dependency: "direct main"
+    description:
+      path: "packages/features/search"
       relative: true
     source: path
     version: "0.0.0"

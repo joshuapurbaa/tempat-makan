@@ -25,6 +25,8 @@ dependencies:
     path: packages/features/detail
   profile:
     path: packages/features/profile
+  search:
+    path: packages/features/search
   resources:
     path: packages/resources
   core:

@@ -1,7 +1,5 @@
-import 'package:core/src/domain/entity/restaurant.dart';
-import 'package:core/src/domain/usecases/get_restaurant_list.dart';
-import 'package:core/src/utils/state_enum.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:core/core.dart';
+import 'package:flutter/material.dart';
 
 class RestaurantListNotifier extends ChangeNotifier {
   List<Restaurant> _restaurant = <Restaurant>[];

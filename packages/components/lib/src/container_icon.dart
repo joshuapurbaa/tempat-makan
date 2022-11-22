@@ -23,14 +23,11 @@ class ContainerIcon extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppDimens.space20),
       ),
+      color: backgroundColor,
       elevation: 4,
-      child: Container(
+      child: SizedBox(
         width: width,
         height: height,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(AppDimens.space20),
-        ),
         child: Icon(
           icon,
           color: iconColor,

@@ -10,6 +10,7 @@ import 'package:http/http.dart' as http;
 abstract class RestaurantRemoteDataSource {
   Future<List<RestaurantModel>> getRestaurantList();
   Future<RestaurantDetailModel> getRestaurantDetail(String id);
+  Future<List<RestaurantModel>> searchRestaurant(String query);
 }
 
 class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
@@ -38,6 +39,18 @@ class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
     if (response.statusCode == 200) {
       return RestaurantDetailResponse.fromJson(json.decode(response.body))
           .restaurant;
+    } else {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<List<RestaurantModel>> searchRestaurant(String query) async {
+    final response = await client.get(Uri.parse('$baseUrl/search?q=$query'));
+
+    if (response.statusCode == 200) {
+      return RestaurantResponse.fromJson(json.decode(response.body))
+          .restaurantList;
     } else {
       throw ServerException();
     }

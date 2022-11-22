@@ -23,7 +23,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Expanded(
               child: PageView(
                 controller: controller,
-                children: [
+                children: const [
                   OnboardPageView(
                     image: AppStrings.onboard1,
                     headline: AppStrings.onboardHeadline1,

@@ -10,46 +10,60 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const GapsWithDimens(w: 20),
-        const ContainerIcon(
-          backgroundColor: AppPalette.greyColor2,
-          icon: Icons.location_pin,
-        ),
-        const GapsWithDimens(w: 10),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Your location',
-                style: Theme.of(context).textTheme.subtitle2,
-              ),
-              Text(
-                'Jakarta',
-                style: Theme.of(context).textTheme.subtitle1,
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          width: AppDimens.space70,
-          height: AppDimens.space70,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(AppDimens.space20),
-            child: GestureDetector(
-              onTap: () => context.goNamed('profile'),
-              child: Image.asset(
-                AppStrings.homePerson,
-                package: 'home',
-                fit: BoxFit.cover,
+    final text = Theme.of(context).textTheme;
+    return ColoredBox(
+      color: AppPalette.darkBlue,
+      child: PaddingOnlyWithDimens(
+        top: 10,
+        bottom: 20,
+        right: 20,
+        left: 20,
+        child: Row(
+          children: [
+            const ContainerIcon(
+              backgroundColor: AppPalette.greyColor2,
+              icon: Icons.location_pin,
+            ),
+            const GapsWithDimens(w: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Your location',
+                    style: text.subtitle2?.copyWith(color: Colors.white),
+                  ),
+                  Text(
+                    'Jakarta',
+                    style: text.subtitle1?.copyWith(color: Colors.white),
+                  ),
+                ],
               ),
             ),
-          ),
+            SizedBox(
+              width: AppDimens.space60,
+              height: AppDimens.space60,
+              child: Material(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(AppDimens.space20),
+                ),
+                elevation: 4,
+                child: GestureDetector(
+                  onTap: () => context.goNamed('profile'),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(AppDimens.space20),
+                    child: Image.asset(
+                      AppStrings.homePerson,
+                      package: 'home',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
-        const GapsWithDimens(w: 20),
-      ],
+      ),
     );
   }
 }

@@ -26,7 +26,7 @@ class OnboardPageView extends StatelessWidget {
               package: 'onboarding',
             ),
           ),
-          GapsWithDimens(h: 40),
+          const GapsWithDimens(h: 40),
           Text(
             headline,
             style: Theme.of(context).textTheme.headline4,

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:home/home.dart';
 import 'package:onboarding/onboarding.dart';
 import 'package:profile/profile.dart';
+import 'package:search/search.dart';
 import 'package:sign_in/sign_in.dart';
 import 'package:detail/detail.dart';
 
@@ -44,6 +45,11 @@ class AppRouter {
             name: 'profile',
             path: 'profile',
             builder: (context, state) => const ProfileScreen(),
+          ),
+          GoRoute(
+            name: 'search',
+            path: 'search',
+            builder: (context, state) => const SearchScreen(),
           ),
         ],
       ),

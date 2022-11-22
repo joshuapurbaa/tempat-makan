@@ -2,11 +2,11 @@ import 'package:components/components.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:resources/resources.dart';
 
+import 'view_model/restaurant_list_notifier.dart';
 import 'widgets/card_home.dart';
+import 'widgets/custom_app_bar.dart';
 import 'widgets/home_header.dart';
-import 'widgets/search_field.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,12 +29,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: AppDimens.toolbarH,
-        title: const HomeHeader(),
+        title: const PaddingSymetricWithDimens(
+          horizontal: 20,
+          child: CustomAppBar(),
+        ),
       ),
       body: Column(
         children: [
-          const SearchField(),
+          const HomeHeader(),
           Consumer<RestaurantListNotifier>(
             builder: (context, data, child) {
               final state = data.restaurantState;
@@ -42,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 case RequestState.loading:
                 case RequestState.empty:
                   return const PaddingOnlyWithDimens(
-                    top: 30,
+                    top: 250,
                     child: LoadingIndicator(),
                   );
                 case RequestState.loaded:

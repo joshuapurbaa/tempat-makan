@@ -180,14 +180,13 @@ class AppTheme {
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
         ),
-        color: Colors.transparent,
+        color: AppPalette.darkBlue,
         elevation: 0,
       ),
       textTheme: lighTextTheme,
       inputDecorationTheme: InputDecorationTheme(
         prefixIconColor: AppPalette.darkBlue,
         isDense: true,
-        contentPadding: const EdgeInsets.fromLTRB(25, 20, 25, 20),
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(15),

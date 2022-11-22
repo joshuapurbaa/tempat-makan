@@ -20,21 +20,21 @@ class OnboardBottomRow extends StatelessWidget {
         SmoothPageIndicator(
           controller: controller,
           count: 3,
-          effect: JumpingDotEffect(),
+          effect: const JumpingDotEffect(),
         ),
         MaterialButton(
           onPressed: () {
             Provider.of<AppStateManager>(context, listen: false).onBoarded();
           },
-          child: Icon(
-            Icons.chevron_right_rounded,
-            color: AppPalette.whiteColor,
-            size: AppDimens.space40,
-          ),
           padding: EdgeInsets.symmetric(vertical: AppDimens.space4),
           color: AppPalette.darkBlue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppDimens.space50),
+          ),
+          child: Icon(
+            Icons.chevron_right_rounded,
+            color: AppPalette.whiteColor,
+            size: AppDimens.space40,
           ),
         )
       ],

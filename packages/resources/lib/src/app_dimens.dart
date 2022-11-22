@@ -34,6 +34,7 @@ class AppDimens {
   static double toolbarH = 100.h;
   static double profileUserH = 140.h;
   static double cardHomeH = 250.h;
+  static double cardSearchH = 400.h;
   static double detailImageH = 400.h;
   static double detailContainerH = 670.h;
   static double detailTabViewH = 500.h;

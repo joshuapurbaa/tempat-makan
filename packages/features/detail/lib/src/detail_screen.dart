@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'view_model/restaurant_detail_notifier.dart';
 import 'widgets/detail_content.dart';
 
 class DetailScreen extends StatefulWidget {

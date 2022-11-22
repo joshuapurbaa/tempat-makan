@@ -1,9 +1,11 @@
 import 'package:app_state_manager/app_state_manager.dart';
-import 'package:core/core.dart';
+import 'package:detail/detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home/home.dart';
 import 'package:provider/provider.dart';
 import 'package:resources/resources.dart';
+import 'package:search/search.dart';
 import 'package:tempat_makan/app_router.dart';
 import 'injection.dart' as di;
 
@@ -42,6 +44,9 @@ class _TempatMakanState extends State<TempatMakan> {
         ),
         ChangeNotifierProvider(
           create: (_) => di.locator<RestaurantDetailNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.locator<RestaurantSearchNotifier>(),
         ),
       ],
       child: ScreenUtilInit(
