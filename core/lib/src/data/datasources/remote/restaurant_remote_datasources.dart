@@ -1,10 +1,6 @@
 import 'dart:convert';
 
 import 'package:core/core.dart';
-import 'package:core/src/data/models/restaurant_detail_model.dart';
-import 'package:core/src/data/models/restaurant_detail_response.dart';
-import 'package:core/src/data/models/restaurant_response.dart';
-import 'package:core/src/utils/exception.dart';
 import 'package:http/http.dart' as http;
 
 abstract class RestaurantRemoteDataSource {

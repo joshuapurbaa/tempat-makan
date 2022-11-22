@@ -6,11 +6,13 @@ part 'customer_review_model.g.dart';
 
 @JsonSerializable()
 class CustomerReviewsModel extends Equatable {
+  final String? id;
   final String name;
   final String review;
   final String date;
 
-  const CustomerReviewsModel({
+  const CustomerReviewsModel(
+    this.id, {
     required this.name,
     required this.review,
     required this.date,

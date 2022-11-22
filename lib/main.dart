@@ -1,6 +1,7 @@
 import 'package:app_state_manager/app_state_manager.dart';
 import 'package:detail/detail.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home/home.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +13,7 @@ import 'injection.dart' as di;
 void main() async {
   di.init();
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   final appStateManager = AppStateManager();
   await appStateManager.initializeApp();
   runApp(

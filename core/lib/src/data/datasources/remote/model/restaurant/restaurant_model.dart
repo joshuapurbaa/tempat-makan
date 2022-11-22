@@ -1,4 +1,4 @@
-import 'package:core/src/domain/entity/restaurant.dart';
+import 'package:core/core.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 

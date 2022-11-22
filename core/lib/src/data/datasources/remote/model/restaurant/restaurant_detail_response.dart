@@ -1,6 +1,7 @@
-import 'package:core/src/data/models/restaurant_detail_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'restaurant.dart';
 
 part 'restaurant_detail_response.g.dart';
 

@@ -1,5 +1,6 @@
 PACKAGES := $(wildcard packages/*)
 FEATURES := $(wildcard packages/features/*)
+CORE := $(wildcard core/)
 BUILD-RUNNER := packages/fav_qs_api packages/key_value_storage
 
 run:
@@ -51,6 +52,7 @@ upgrade:
 		flutter pub upgrade ; \
 		cd ../../ ; \
 	done
+
 
 lint:
 	flutter analyze

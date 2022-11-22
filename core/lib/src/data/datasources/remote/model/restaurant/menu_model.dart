@@ -1,6 +1,4 @@
-import 'package:core/src/data/models/drink_model.dart';
-import 'package:core/src/data/models/food_model.dart';
-import 'package:core/src/domain/entity/menu.dart';
+import 'package:core/core.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 

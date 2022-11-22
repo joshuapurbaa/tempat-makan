@@ -1,6 +1,3 @@
-import 'package:core/src/data/models/category_model.dart';
-import 'package:core/src/data/models/customer_review_model.dart';
-import 'package:core/src/data/models/menu_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:core/core.dart';
 import 'package:equatable/equatable.dart';
