@@ -7,6 +7,7 @@ import 'package:profile/profile.dart';
 import 'package:search/search.dart';
 import 'package:sign_in/sign_in.dart';
 import 'package:detail/detail.dart';
+import 'package:sign_up/sign_up.dart';
 
 class AppRouter {
   final AppStateManager appStateManager;
@@ -22,6 +23,11 @@ class AppRouter {
         name: 'signIn',
         path: '/signIn',
         builder: (context, state) => const SignInScreen(),
+      ),
+      GoRoute(
+        name: 'signUp',
+        path: '/signUp',
+        builder: (context, state) => const SignUpScreen(),
       ),
       GoRoute(
         name: 'onboarding',

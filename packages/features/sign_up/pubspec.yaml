@@ -1,5 +1,4 @@
-name: sign_in
-description: A Flutter Sign In package for tempat makan app
+name: sign_up
 publish_to: none
 
 environment:
@@ -18,8 +17,7 @@ dependencies:
   resources:
     path: ../../resources
   provider: ^6.0.4
-  go_router: ^5.2.0
-    
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -27,6 +25,3 @@ dev_dependencies:
 
 
 flutter:
-
-                    
-                                      

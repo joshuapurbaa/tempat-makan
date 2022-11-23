@@ -1,7 +1,6 @@
+import 'package:core/core.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-
-import 'restaurant.dart';
 
 part 'restaurant_response.g.dart';
 
@@ -9,9 +8,11 @@ part 'restaurant_response.g.dart';
 class RestaurantResponse extends Equatable {
   @JsonKey(name: 'restaurants')
   final List<RestaurantModel> restaurantList;
+  final bool? error;
 
   const RestaurantResponse({
     required this.restaurantList,
+    this.error,
   });
 
   factory RestaurantResponse.fromJson(Map<String, dynamic> json) =>
@@ -19,5 +20,5 @@ class RestaurantResponse extends Equatable {
   Map<String, dynamic> toJson() => _$RestaurantResponseToJson(this);
 
   @override
-  List<Object?> get props => [restaurantList];
+  List<Object?> get props => [restaurantList, error];
 }

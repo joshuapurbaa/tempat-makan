@@ -21,12 +21,12 @@ class TitleListView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                detail.name,
+              TextWithOverflow(
+                text: detail.name,
                 style: text.headline5,
               ),
-              Text(
-                detail.city,
+              TextWithOverflow(
+                text: detail.city,
                 style: text.subtitle2,
               ),
             ],
@@ -42,8 +42,8 @@ class TitleListView extends StatelessWidget {
                   color: Colors.orange,
                 ),
                 const GapsWithDimens(w: 5),
-                Text(
-                  detail.rating.toString(),
+                TextWithOverflow(
+                  text: detail.rating.toString(),
                   style: text.subtitle1,
                 )
               ],

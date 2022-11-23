@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:core/core.dart';
 import 'package:http/http.dart' as http;
@@ -10,45 +12,72 @@ abstract class RestaurantRemoteDataSource {
 }
 
 class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
-  static const baseUrl = 'https://restaurant-api.dicoding.dev';
-
   final http.Client client;
 
   RestaurantRemoteDataSourceImpl({required this.client});
 
   @override
   Future<List<RestaurantModel>> getRestaurantList() async {
-    final response = await client.get(Uri.parse('$baseUrl/list'));
+    try {
+      final response = await client
+          .get(Uri.parse(ListApi.restaurantList))
+          .timeout(const Duration(seconds: 10));
+      final result = RestaurantResponse.fromJson(json.decode(response.body));
 
-    if (response.statusCode == 200) {
-      return RestaurantResponse.fromJson(json.decode(response.body))
-          .restaurantList;
-    } else {
-      throw ServerException();
+      if (response.statusCode == 200) {
+        return result.restaurantList;
+      } else {
+        throw ServerException(result.error.toString());
+      }
+    } on ServerException catch (e) {
+      throw ServerException(e.message);
+    } on SocketException catch (e) {
+      throw SocketException(e.message);
+    } on TimeoutException catch (e) {
+      throw TimeoutException(e.message);
     }
   }
 
   @override
   Future<RestaurantDetailModel> getRestaurantDetail(String id) async {
-    final response = await client.get(Uri.parse('$baseUrl/detail/$id'));
-
-    if (response.statusCode == 200) {
-      return RestaurantDetailResponse.fromJson(json.decode(response.body))
-          .restaurant;
-    } else {
-      throw ServerException();
+    try {
+      final response = await client
+          .get(Uri.parse('${ListApi.restaurantDetail}/$id'))
+          .timeout(const Duration(seconds: 10));
+      final result =
+          RestaurantDetailResponse.fromJson(json.decode(response.body));
+      if (response.statusCode == 200) {
+        return result.restaurant;
+      } else {
+        throw ServerException(result.error.toString());
+      }
+    } on ServerException catch (e) {
+      throw ServerException(e.message);
+    } on SocketException catch (e) {
+      throw SocketException(e.message);
+    } on TimeoutException catch (e) {
+      throw TimeoutException(e.message);
     }
   }
 
   @override
   Future<List<RestaurantModel>> searchRestaurant(String query) async {
-    final response = await client.get(Uri.parse('$baseUrl/search?q=$query'));
-
-    if (response.statusCode == 200) {
-      return RestaurantResponse.fromJson(json.decode(response.body))
-          .restaurantList;
-    } else {
-      throw ServerException();
+    try {
+      final response = await client
+          .get(Uri.parse('${ListApi.searchRestaurant}q=$query'))
+          .timeout(const Duration(seconds: 10));
+      final result = RestaurantResponse.fromJson(json.decode(response.body));
+      if (response.statusCode == 200) {
+        return result.restaurantList;
+      } else {
+        throw ServerException(result.error.toString());
+      }
+    } on ServerException catch (e) {
+      throw ServerException(e.message);
+    } on SocketException catch (e) {
+      throw SocketException(e.message);
+    } on TimeoutException catch (e) {
+      throw TimeoutException(e.message);
     }
   }
 }

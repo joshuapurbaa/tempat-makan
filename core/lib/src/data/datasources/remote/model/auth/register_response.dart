@@ -1,4 +1,4 @@
-import 'package:core/src/domain/entities/auth/auth.dart';
+import 'package:core/core.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:equatable/equatable.dart';
 

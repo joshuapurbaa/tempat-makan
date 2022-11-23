@@ -52,9 +52,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: CardHome(restaurants: data.restaurant),
                   );
                 case RequestState.error:
-                  return const Text('ERROR');
+                  return Center(
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {});
+                      },
+                      icon: const Icon(Icons.refresh_rounded),
+                    ),
+                  );
                 default:
-                  return const Text('please log in later');
+                  return const Text('Try again later');
               }
             },
           ),

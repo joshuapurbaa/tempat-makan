@@ -1,6 +1,7 @@
 import 'package:app_state_manager/app_state_manager.dart';
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:resources/resources.dart';
 
@@ -91,7 +92,9 @@ class _SignInScreenState extends State<SignInScreen> {
             TextRow(
               textRow1: AppStrings.loginTextRow1,
               textRow2: AppStrings.loginTextRow2,
-              onTap: () {},
+              onTap: () {
+                context.goNamed('signUp');
+              },
             ),
           ],
         ),

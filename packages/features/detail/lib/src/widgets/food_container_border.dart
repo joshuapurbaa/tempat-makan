@@ -48,14 +48,13 @@ class DetailContainerBorder extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  name,
+                TextWithOverflow(
+                  text: name,
                   style: text.subtitle1,
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
                 ),
-                Text(
-                  'Rp.20.000',
+                TextWithOverflow(
+                  text: 'Rp.20.000',
                   style: text.subtitle2,
                 )
               ],

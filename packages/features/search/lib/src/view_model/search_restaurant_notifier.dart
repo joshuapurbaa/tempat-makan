@@ -12,8 +12,8 @@ class RestaurantSearchNotifier extends ChangeNotifier {
   List<Restaurant> _dataResult = <Restaurant>[];
   List<Restaurant> get dataResult => _dataResult;
 
-  String _message = '';
-  String get message => _message;
+  String? _message;
+  String? get message => _message;
 
   Future<void> searchRestaurantQuery(String query) async {
     _searchState = RequestState.loading;

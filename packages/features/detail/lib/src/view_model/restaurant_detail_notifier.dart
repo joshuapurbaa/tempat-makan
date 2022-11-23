@@ -8,8 +8,8 @@ class RestaurantDetailNotifier extends ChangeNotifier {
   RequestState _restaurantDetailState = RequestState.empty;
   RequestState get restaurantDetailState => _restaurantDetailState;
 
-  String _message = '';
-  String get message => _message;
+  String? _message;
+  String? get message => _message;
 
   RestaurantDetailNotifier({required this.getRestaurantDetail});
   final GetRestaurantDetail getRestaurantDetail;

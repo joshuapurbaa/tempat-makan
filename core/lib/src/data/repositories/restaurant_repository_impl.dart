@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:core/core.dart';
@@ -13,8 +14,16 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
     try {
       final result = await remoteDataSource.getRestaurantList();
       return Right(result.map((model) => model.toEntity()).toList());
-    } on SocketException {
-      return const Left(ConnectionFailure('Failed to connect to the network'));
+    } on ServerException catch (e) {
+      return Left(ServerFailure('Server failure: ${e.message}'));
+    } on SocketException catch (e) {
+      return Left(
+        ConnectionFailure('Failed to connect to the network, ${e.message}'),
+      );
+    } on TimeoutException catch (e) {
+      return Left(
+        TimeOutFailure('Connection time out, ${e.message}'),
+      );
     }
   }
 
@@ -24,8 +33,16 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
     try {
       final result = await remoteDataSource.getRestaurantDetail(id);
       return Right(result.toEntity());
-    } on SocketException {
-      return const Left(ConnectionFailure(''));
+    } on ServerException catch (e) {
+      return Left(ServerFailure('Server failure: ${e.message}'));
+    } on SocketException catch (e) {
+      return Left(
+        ConnectionFailure('Failed to connect to the network, ${e.message}'),
+      );
+    } on TimeoutException catch (e) {
+      return Left(
+        TimeOutFailure('Connection time out, ${e.message}'),
+      );
     }
   }
 
@@ -35,8 +52,16 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
     try {
       final result = await remoteDataSource.searchRestaurant(query);
       return Right(result.map((model) => model.toEntity()).toList());
-    } on SocketException {
-      return const Left(ConnectionFailure('Failed to connect to the network'));
+    } on ServerException catch (e) {
+      return Left(ServerFailure('Server failure: ${e.message}'));
+    } on SocketException catch (e) {
+      return Left(
+        ConnectionFailure('Failed to connect to the network, ${e.message}'),
+      );
+    } on TimeoutException catch (e) {
+      return Left(
+        TimeOutFailure('Connection time out, ${e.message}'),
+      );
     }
   }
 }
