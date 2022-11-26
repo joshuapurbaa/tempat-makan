@@ -5,6 +5,8 @@ import 'dart:io';
 import 'package:core/core.dart';
 import 'package:http/http.dart' as http;
 
+import '../datasources.dart';
+
 abstract class RestaurantRemoteDataSource {
   Future<List<RestaurantModel>> getRestaurantList();
   Future<RestaurantDetailModel> getRestaurantDetail(String id);

@@ -18,15 +18,15 @@ class DetailContent extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          height: AppDimens.detailImageH,
+          height: AppSize.detailImageH,
           child: Image.network(
             '${AppStrings.mediumImageUrl}${restaurantDetail.pictureId}',
             fit: BoxFit.cover,
           ),
         ),
         Positioned(
-          top: AppDimens.space60,
-          left: AppDimens.space20,
+          top: AppSize.size60,
+          left: AppSize.size20,
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
             child: const ContainerIcon(

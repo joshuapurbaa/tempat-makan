@@ -20,7 +20,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: AppDimens.space70,
+        toolbarHeight: AppSize.size70,
         title: const SearchField(),
       ),
       body: Consumer<RestaurantSearchNotifier>(

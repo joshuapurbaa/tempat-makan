@@ -38,13 +38,13 @@ class CardSearch extends StatelessWidget {
           },
           child: Card(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppDimens.space20),
+              borderRadius: BorderRadius.circular(AppSize.size20),
             ),
             child: Stack(
               fit: StackFit.expand,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(AppDimens.space20),
+                  borderRadius: BorderRadius.circular(AppSize.size20),
                   child: Image.network(
                     '${AppStrings.smallImageUrl}${restaurant.pictureId}',
                     fit: BoxFit.cover,
@@ -53,16 +53,16 @@ class CardSearch extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                    height: AppDimens.space70,
+                    height: AppSize.size70,
                     padding: EdgeInsets.only(
-                      left: AppDimens.space20,
-                      top: AppDimens.space10,
-                      right: AppDimens.space20,
+                      left: AppSize.size20,
+                      top: AppSize.size10,
+                      right: AppSize.size20,
                     ),
                     decoration: BoxDecoration(
                       color: AppPalette.whiteColor,
                       borderRadius: BorderRadius.vertical(
-                        bottom: Radius.circular(AppDimens.space20),
+                        bottom: Radius.circular(AppSize.size20),
                       ),
                     ),
                     child: Column(

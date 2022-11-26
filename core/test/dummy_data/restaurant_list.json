@@ -1,0 +1,14 @@
+{
+          "error": false,
+          "message": "success",
+          "count": 20,
+          "restaurants": [
+                    {
+                              "id": "rqdv5juczeskfw1e867",
+                              "name": "Melting Pot",
+                              "pictureId": "14",
+                              "city": "Medan",
+                              "rating": 4.2
+                    }
+          ]
+}

@@ -46,7 +46,7 @@ class _SearchFieldState extends State<SearchField> {
                   right: 10,
                   child: Icon(
                     Icons.search_rounded,
-                    size: AppDimens.space20,
+                    size: AppSize.size20,
                   ),
                 ),
                 contentPadding: EdgeInsets.zero,
@@ -73,12 +73,12 @@ class _SearchFieldState extends State<SearchField> {
           const GapsWithDimens(w: 20),
           Icon(
             Icons.email_rounded,
-            size: AppDimens.space30,
+            size: AppSize.size30,
           ),
           const GapsWithDimens(w: 20),
           Icon(
             Icons.notifications,
-            size: AppDimens.space30,
+            size: AppSize.size30,
           )
         ],
       ),

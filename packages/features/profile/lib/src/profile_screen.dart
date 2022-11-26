@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: AppDimens.toolbarH,
+        toolbarHeight: AppSize.toolbarH,
         title: const ProfileHeader(),
       ),
       body: Column(
@@ -26,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
           ListTile(
             leading: Icon(
               Icons.card_membership,
-              size: AppDimens.space35,
+              size: AppSize.size35,
               color: AppPalette.darkBlue,
             ),
             title: Text(
@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
             },
             leading: Icon(
               Icons.logout_rounded,
-              size: AppDimens.space35,
+              size: AppSize.size35,
               color: AppPalette.darkBlue,
             ),
             title: Text(

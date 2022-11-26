@@ -8,86 +8,86 @@ class AppTheme {
 
   static TextTheme lighTextTheme = TextTheme(
     headline1: GoogleFonts.openSans(
-      fontSize: AppDimens.h1,
+      fontSize: AppSize.h1,
       fontWeight: FontWeight.w300,
       letterSpacing: -1.5,
       color: AppPalette.darkBlue,
     ),
     headline2: GoogleFonts.openSans(
-      fontSize: AppDimens.h2,
+      fontSize: AppSize.h2,
       fontWeight: FontWeight.w300,
       letterSpacing: -0.5,
       color: AppPalette.darkBlue,
     ),
     // Sign In
     headline3: GoogleFonts.openSans(
-      fontSize: AppDimens.h3,
+      fontSize: AppSize.h3,
       fontWeight: FontWeight.w600,
       color: AppPalette.darkBlue,
     ),
     // Onboarding
     headline4: GoogleFonts.openSans(
-      fontSize: AppDimens.h4,
+      fontSize: AppSize.h4,
       fontWeight: FontWeight.w700,
       color: AppPalette.darkBlue,
     ),
     // Detail
     headline5: GoogleFonts.openSans(
-      fontSize: AppDimens.h5,
+      fontSize: AppSize.h5,
       fontWeight: FontWeight.w800,
       color: AppPalette.darkBlue,
     ),
     // Detail
     headline6: GoogleFonts.openSans(
-      fontSize: AppDimens.h6,
+      fontSize: AppSize.h6,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.15,
       color: AppPalette.darkBlue,
     ),
     // Home: Header, card
     subtitle1: GoogleFonts.openSans(
-      fontSize: AppDimens.subtitle1,
+      fontSize: AppSize.subtitle1,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.15,
       color: AppPalette.darkBlue,
     ),
     // Header
     subtitle2: GoogleFonts.openSans(
-      fontSize: AppDimens.subtitle2,
+      fontSize: AppSize.subtitle2,
       fontWeight: FontWeight.w500,
       letterSpacing: 0.15,
       color: AppPalette.darkBlue.withOpacity(0.3),
     ),
     // Home: textfield
     bodyText1: GoogleFonts.poppins(
-      fontSize: AppDimens.body1,
+      fontSize: AppSize.body1,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.5,
       color: AppPalette.darkBlue,
     ),
     // Detail
     bodyText2: GoogleFonts.poppins(
-      fontSize: AppDimens.body2,
+      fontSize: AppSize.body2,
       fontWeight: FontWeight.w500,
       letterSpacing: 0.25,
       color: AppPalette.darkBlue.withOpacity(0.7),
     ),
     // Detail
     button: GoogleFonts.poppins(
-      fontSize: AppDimens.button,
+      fontSize: AppSize.button,
       fontWeight: FontWeight.w400,
       letterSpacing: 1.25,
       color: AppPalette.whiteColor,
     ),
     // Detail
     caption: GoogleFonts.poppins(
-      fontSize: AppDimens.caption,
+      fontSize: AppSize.caption,
       fontWeight: FontWeight.w500,
       letterSpacing: 0.4,
       color: AppPalette.darkBlue,
     ),
     overline: GoogleFonts.poppins(
-      fontSize: AppDimens.overline,
+      fontSize: AppSize.overline,
       fontWeight: FontWeight.w400,
       letterSpacing: 1.5,
       color: AppPalette.darkBlue,

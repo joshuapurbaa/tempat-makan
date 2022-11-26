@@ -10,7 +10,7 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppDimens.space70,
+      height: AppSize.size70,
       child: PaddingOnlyWithDimens(
         left: 20,
         top: 10,

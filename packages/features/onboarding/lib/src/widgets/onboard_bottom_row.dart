@@ -26,15 +26,15 @@ class OnboardBottomRow extends StatelessWidget {
           onPressed: () {
             Provider.of<AppStateManager>(context, listen: false).onBoarded();
           },
-          padding: EdgeInsets.symmetric(vertical: AppDimens.space4),
+          padding: EdgeInsets.symmetric(vertical: AppSize.size4),
           color: AppPalette.darkBlue,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppDimens.space50),
+            borderRadius: BorderRadius.circular(AppSize.size50),
           ),
           child: Icon(
             Icons.chevron_right_rounded,
             color: AppPalette.whiteColor,
-            size: AppDimens.space40,
+            size: AppSize.size40,
           ),
         )
       ],

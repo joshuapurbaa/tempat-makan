@@ -14,11 +14,11 @@ class TextButtonAlertDialog extends StatelessWidget {
     final text = Theme.of(context).textTheme;
     return TextButton(
       style: TextButton.styleFrom(
-        padding: EdgeInsets.all(AppDimens.space10),
+        padding: EdgeInsets.all(AppSize.size10),
         elevation: 0,
         backgroundColor: Colors.transparent,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppDimens.space20),
+          borderRadius: BorderRadius.circular(AppSize.size20),
         ),
       ),
       onPressed: onpresed,

@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:core/core.dart';
 import 'package:http/http.dart' as http;
 
+import '../datasources.dart';
+
 abstract class AuthRemoteDatasource {
   Future<RegisterResponse> register(RegisterParams registerParams);
   Future<LoginResponse> login(LoginParams loginParams);

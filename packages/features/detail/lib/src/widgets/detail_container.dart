@@ -18,12 +18,12 @@ class DetailContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppDimens.detailContainerH,
-      padding: EdgeInsets.symmetric(horizontal: AppDimens.space20),
+      height: AppSize.detailContainerH,
+      padding: EdgeInsets.symmetric(horizontal: AppSize.size20),
       decoration: BoxDecoration(
         color: AppPalette.whiteColor,
         borderRadius: BorderRadius.vertical(
-          top: Radius.circular(AppDimens.space40),
+          top: Radius.circular(AppSize.size40),
         ),
       ),
       child: Column(

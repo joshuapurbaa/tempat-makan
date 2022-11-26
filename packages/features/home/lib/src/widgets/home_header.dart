@@ -41,17 +41,17 @@ class HomeHeader extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: AppDimens.space60,
-              height: AppDimens.space60,
+              width: AppSize.size60,
+              height: AppSize.size60,
               child: Material(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(AppDimens.space20),
+                  borderRadius: BorderRadius.circular(AppSize.size20),
                 ),
                 elevation: 4,
                 child: GestureDetector(
                   onTap: () => context.goNamed('profile'),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(AppDimens.space20),
+                    borderRadius: BorderRadius.circular(AppSize.size20),
                     child: Image.asset(
                       AppStrings.homePerson,
                       package: 'home',

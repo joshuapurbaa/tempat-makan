@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
             context.goNamed('search');
           },
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(AppDimens.space15),
+            borderRadius: BorderRadius.circular(AppSize.size15),
             child: ColoredBox(
               color: AppPalette.greyColor2,
               child: PaddingOnlyWithDimens(
@@ -45,12 +45,12 @@ class CustomAppBar extends StatelessWidget {
         const Spacer(),
         Icon(
           Icons.email_rounded,
-          size: AppDimens.space30,
+          size: AppSize.size30,
         ),
         const GapsWithDimens(w: 20),
         Icon(
           Icons.notifications,
-          size: AppDimens.space30,
+          size: AppSize.size30,
         )
       ],
     );

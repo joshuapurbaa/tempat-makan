@@ -17,7 +17,7 @@ class FoodAndDrinkListView extends StatelessWidget {
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
     return SizedBox(
-      height: AppDimens.detailFoodDrinkListViewH,
+      height: AppSize.detailFoodDrinkListViewH,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

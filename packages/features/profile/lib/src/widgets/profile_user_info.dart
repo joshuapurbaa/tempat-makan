@@ -14,8 +14,8 @@ class ProfileUserInfo extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: AppDimens.profileUserH,
-            width: AppDimens.profileUserH,
+            height: AppSize.profileUserH,
+            width: AppSize.profileUserH,
             child: Stack(
               children: [
                 Align(
@@ -25,10 +25,10 @@ class ProfileUserInfo extends StatelessWidget {
                     strokeCap: StrokeCap.round,
                     dashPattern: const [15],
                     borderType: BorderType.Circle,
-                    padding: EdgeInsets.all(AppDimens.space5),
+                    padding: EdgeInsets.all(AppSize.size5),
                     strokeWidth: 2.5,
                     child: CircleAvatar(
-                      radius: AppDimens.space55,
+                      radius: AppSize.size55,
                       backgroundImage: const AssetImage(
                         AppStrings.profilePerson,
                         package: 'profile',
@@ -39,14 +39,14 @@ class ProfileUserInfo extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: CircleAvatar(
-                    radius: AppDimens.space24,
+                    radius: AppSize.size24,
                     backgroundColor: AppPalette.whiteColor,
                     child: CircleAvatar(
                       backgroundColor: AppPalette.darkBlue,
-                      radius: AppDimens.space20,
+                      radius: AppSize.size20,
                       child: Icon(
                         Icons.edit_rounded,
-                        size: AppDimens.space20,
+                        size: AppSize.size20,
                       ),
                     ),
                   ),

@@ -15,11 +15,11 @@ class FilledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: AppDimens.space60,
+      height: AppSize.size60,
       child: MaterialButton(
         onPressed: onTap,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppDimens.space15),
+          borderRadius: BorderRadius.circular(AppSize.size15),
         ),
         color: AppPalette.darkBlue,
         child: Text(

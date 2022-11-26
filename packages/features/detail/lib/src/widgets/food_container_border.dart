@@ -17,23 +17,23 @@ class DetailContainerBorder extends StatelessWidget {
     final width = MediaQuery.of(context).size.width * 0.55;
     final text = Theme.of(context).textTheme;
     return Container(
-      margin: EdgeInsets.only(right: AppDimens.space10),
+      margin: EdgeInsets.only(right: AppSize.size10),
       width: width,
-      padding: EdgeInsets.all(AppDimens.space10),
+      padding: EdgeInsets.all(AppSize.size10),
       decoration: BoxDecoration(
         border: Border.all(
           color: AppPalette.darkBlue.withOpacity(0.2),
         ),
-        borderRadius: BorderRadius.circular(AppDimens.space20),
+        borderRadius: BorderRadius.circular(AppSize.size20),
       ),
       child: Row(
         children: [
           SizedBox(
-            height: AppDimens.space60,
-            width: AppDimens.space60,
+            height: AppSize.size60,
+            width: AppSize.size60,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(
-                AppDimens.space20,
+                AppSize.size20,
               ),
               child: Image.asset(
                 image,
@@ -63,8 +63,8 @@ class DetailContainerBorder extends StatelessWidget {
           ContainerIcon(
             backgroundColor: AppPalette.yellow,
             icon: Icons.add,
-            height: AppDimens.space50,
-            width: AppDimens.space50,
+            height: AppSize.size50,
+            width: AppSize.size50,
           )
         ],
       ),

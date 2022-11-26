@@ -21,7 +21,7 @@ class ContainerIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppDimens.space20),
+        borderRadius: BorderRadius.circular(AppSize.size20),
       ),
       color: backgroundColor,
       elevation: 4,
@@ -31,7 +31,7 @@ class ContainerIcon extends StatelessWidget {
         child: Icon(
           icon,
           color: iconColor,
-          size: AppDimens.space30,
+          size: AppSize.size30,
         ),
       ),
     );

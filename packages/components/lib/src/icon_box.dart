@@ -13,18 +13,18 @@ class IconBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: AppDimens.space10,
-        vertical: AppDimens.space10,
+        horizontal: AppSize.size10,
+        vertical: AppSize.size10,
       ),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white),
-        borderRadius: BorderRadius.circular(AppDimens.space10),
+        borderRadius: BorderRadius.circular(AppSize.size10),
       ),
       child: Image.asset(
         imageAsset,
         cacheWidth: 60,
         cacheHeight: 60,
-        width: AppDimens.space30,
+        width: AppSize.size30,
         package: 'components',
       ),
     );

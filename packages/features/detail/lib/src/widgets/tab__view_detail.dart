@@ -14,7 +14,7 @@ class TabViewDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
     return SizedBox(
-      height: AppDimens.detailTabViewH,
+      height: AppSize.detailTabViewH,
       child: DefaultTabController(
         initialIndex: 0,
         length: 2,
@@ -37,7 +37,7 @@ class TabViewDetail extends StatelessWidget {
               child: TabBarView(
                 children: [
                   ListView(
-                    padding: EdgeInsets.only(top: AppDimens.space10),
+                    padding: EdgeInsets.only(top: AppSize.size10),
                     children: [
                       ReadMoreText(
                         detail.description,
@@ -58,8 +58,8 @@ class TabViewDetail extends StatelessWidget {
                       Expanded(
                         child: ListView.builder(
                           padding: EdgeInsets.only(
-                            top: AppDimens.space10,
-                            bottom: AppDimens.space20,
+                            top: AppSize.size10,
+                            bottom: AppSize.size20,
                           ),
                           itemCount: detail.customerReviews.length,
                           itemBuilder: (context, index) {
@@ -92,7 +92,7 @@ class TabViewDetail extends StatelessWidget {
                               return AlertDialog(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(
-                                    AppDimens.space20,
+                                    AppSize.size20,
                                   ),
                                 ),
                                 title: Text(
@@ -100,7 +100,7 @@ class TabViewDetail extends StatelessWidget {
                                   style: text.headline6,
                                 ),
                                 content: SizedBox(
-                                  width: AppDimens.detailAlertW,
+                                  width: AppSize.detailAlertW,
                                   child: TextFormField(
                                     maxLines: null,
                                     decoration: InputDecoration(
@@ -112,8 +112,8 @@ class TabViewDetail extends StatelessWidget {
                                   ),
                                 ),
                                 actionsPadding: EdgeInsets.symmetric(
-                                  horizontal: AppDimens.space20,
-                                  vertical: AppDimens.space20,
+                                  horizontal: AppSize.size20,
+                                  vertical: AppSize.size20,
                                 ),
                                 actions: [
                                   TextButtonAlertDialog(
