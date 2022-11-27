@@ -24,7 +24,7 @@ class HomeHeader extends StatelessWidget {
               backgroundColor: AppPalette.greyColor2,
               icon: Icons.location_pin,
             ),
-            const GapsWithDimens(w: 10),
+            const ResponsiveGaps(w: 10),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

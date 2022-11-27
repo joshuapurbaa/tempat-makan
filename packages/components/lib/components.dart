@@ -1,6 +1,6 @@
 library components;
 
-export 'src/gaps_with_dimens.dart';
+export 'src/responsive_gaps.dart';
 export 'src/filled_button.dart';
 export 'src/signin_option.dart';
 export 'src/icon_box.dart';

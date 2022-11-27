@@ -23,7 +23,7 @@ class CustomBottomBar extends StatelessWidget {
               icon: Icons.favorite_rounded,
               iconColor: AppPalette.blue,
             ),
-            const GapsWithDimens(w: 20),
+            const ResponsiveGaps(w: 20),
             Expanded(
               child: TextButton(
                 style: TextButton.styleFrom(

@@ -28,7 +28,7 @@ class DetailContainer extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const GapsWithDimens(h: 20),
+          const ResponsiveGaps(h: 20),
           TitleListView(detail: detail),
           TabViewDetail(detail: detail),
           const CustomBottomBar(),

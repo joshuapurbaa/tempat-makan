@@ -31,7 +31,7 @@ class CustomAppBar extends StatelessWidget {
                       Icons.search_rounded,
                       color: AppPalette.darkBlue,
                     ),
-                    const GapsWithDimens(w: 10),
+                    const ResponsiveGaps(w: 10),
                     Text(
                       'Cari tempat makan',
                       style: Theme.of(context).textTheme.subtitle2,
@@ -47,7 +47,7 @@ class CustomAppBar extends StatelessWidget {
           Icons.email_rounded,
           size: AppSize.size30,
         ),
-        const GapsWithDimens(w: 20),
+        const ResponsiveGaps(w: 20),
         Icon(
           Icons.notifications,
           size: AppSize.size30,

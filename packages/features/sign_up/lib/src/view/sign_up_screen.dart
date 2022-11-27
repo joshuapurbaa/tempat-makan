@@ -40,7 +40,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 style: Theme.of(context).textTheme.headline3,
               ),
             ),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             Form(
               key: _formKey,
               child: Column(
@@ -55,7 +55,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     controller: _usernameController,
                   ),
-                  const GapsWithDimens(h: 20),
+                  const ResponsiveGaps(h: 20),
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
                     cursorColor: AppPalette.darkBlue,
@@ -70,7 +70,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ],
               ),
             ),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             FilledButton(
               onTap: () {
                 Provider.of<AppStateManager>(context, listen: false)
@@ -78,16 +78,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
               },
               buttonType: 'Sign Up',
             ),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             Center(
               child: Text(
                 AppStrings.or,
                 style: Theme.of(context).textTheme.caption,
               ),
             ),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             const LoginOption(),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             TextRow(
               textRow1: AppStrings.loginTextRow1,
               textRow2: AppStrings.loginTextRow2,

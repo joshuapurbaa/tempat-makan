@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class GapsWithDimens extends StatelessWidget {
-  const GapsWithDimens({
+class ResponsiveGaps extends StatelessWidget {
+  const ResponsiveGaps({
     super.key,
     this.h = 0.0,
     this.w = 0.0,

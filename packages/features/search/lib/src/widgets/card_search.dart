@@ -87,7 +87,7 @@ class CardSearch extends StatelessWidget {
                                   Icons.star_rounded,
                                   color: Colors.orange,
                                 ),
-                                const GapsWithDimens(w: 5),
+                                const ResponsiveGaps(w: 5),
                                 Text(
                                   restaurant.rating.toString(),
                                   style: text.subtitle1,

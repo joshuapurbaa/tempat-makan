@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:resources/resources.dart';
 
-import 'widgets/profile_user_info.dart';
 import 'widgets/profile_header.dart';
+import 'widgets/profile_user_info.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -15,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
     final text = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         toolbarHeight: AppSize.toolbarH,
         title: const ProfileHeader(),
@@ -22,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
       body: Column(
         children: [
           const ProfileUserInfo(),
-          const GapsWithDimens(h: 30),
+          const ResponsiveGaps(h: 30),
           ListTile(
             leading: Icon(
               Icons.card_membership,

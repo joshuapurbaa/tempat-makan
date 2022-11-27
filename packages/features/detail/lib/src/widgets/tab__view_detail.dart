@@ -46,11 +46,11 @@ class TabViewDetail extends StatelessWidget {
                         moreStyle:
                             text.bodyText2?.copyWith(color: AppPalette.blue),
                       ),
-                      const GapsWithDimens(h: 20),
+                      const ResponsiveGaps(h: 20),
                       FoodAndDrinkListView(
                         menus: detail.menus,
                       ),
-                      const GapsWithDimens(h: 20),
+                      const ResponsiveGaps(h: 20),
                     ],
                   ),
                   Column(
@@ -120,7 +120,7 @@ class TabViewDetail extends StatelessWidget {
                                     textAction: 'Cencel',
                                     onpresed: () => Navigator.pop(context),
                                   ),
-                                  const GapsWithDimens(w: 10),
+                                  const ResponsiveGaps(w: 10),
                                   TextButtonAlertDialog(
                                     textAction: 'Add',
                                     onpresed: () => Navigator.pop(context),

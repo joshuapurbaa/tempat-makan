@@ -54,12 +54,12 @@ class ProfileUserInfo extends StatelessWidget {
               ],
             ),
           ),
-          const GapsWithDimens(h: 10),
+          const ResponsiveGaps(h: 10),
           Text(
             'Adrian',
             style: Theme.of(context).textTheme.headline6,
           ),
-          const GapsWithDimens(h: 5),
+          const ResponsiveGaps(h: 5),
           Text(
             '082212345678',
             style: Theme.of(context).textTheme.subtitle2,

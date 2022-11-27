@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:resources/resources.dart';
 import 'package:search/search.dart';
 import 'package:tempat_makan/app_router.dart';
+
 import 'injection.dart' as di;
 
 void main() async {
@@ -57,6 +58,7 @@ class _TempatMakanState extends State<TempatMakan> {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp.router(
+            debugShowCheckedModeBanner: false,
             theme: AppTheme.light(),
             title: 'Tempat Makan',
             routerDelegate: router.routerDelegate,

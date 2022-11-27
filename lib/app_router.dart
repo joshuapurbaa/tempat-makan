@@ -1,4 +1,5 @@
 import 'package:app_state_manager/app_state_manager.dart';
+import 'package:detail/detail.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home/home.dart';
@@ -6,8 +7,22 @@ import 'package:onboarding/onboarding.dart';
 import 'package:profile/profile.dart';
 import 'package:search/search.dart';
 import 'package:sign_in/sign_in.dart';
-import 'package:detail/detail.dart';
 import 'package:sign_up/sign_up.dart';
+
+enum Routes {
+  root('/'),
+  splashScreen('/splashScreen'),
+  signIn('/signIn'),
+  signUp('/signUp'),
+  onBoarding('/onBoarding'),
+  home('/home'),
+  profile('profile'),
+  search('search'),
+  ;
+
+  const Routes(this.path);
+  final String path;
+}
 
 class AppRouter {
   final AppStateManager appStateManager;
@@ -17,26 +32,26 @@ class AppRouter {
   late final router = GoRouter(
     debugLogDiagnostics: true,
     refreshListenable: appStateManager,
-    initialLocation: '/signIn',
+    initialLocation: Routes.signIn.path,
     routes: [
       GoRoute(
-        name: 'signIn',
-        path: '/signIn',
+        name: Routes.signIn.name,
+        path: Routes.signIn.path,
         builder: (context, state) => const SignInScreen(),
       ),
       GoRoute(
-        name: 'signUp',
-        path: '/signUp',
+        name: Routes.signUp.name,
+        path: Routes.signUp.path,
         builder: (context, state) => const SignUpScreen(),
       ),
       GoRoute(
-        name: 'onboarding',
-        path: '/onboarding',
+        name: Routes.onBoarding.name,
+        path: Routes.onBoarding.path,
         builder: (context, state) => const OnboardingScreen(),
       ),
       GoRoute(
-        name: 'home',
-        path: '/home',
+        name: Routes.home.name,
+        path: Routes.home.path,
         builder: (context, state) => const HomeScreen(),
         routes: [
           GoRoute(
@@ -48,13 +63,13 @@ class AppRouter {
             },
           ),
           GoRoute(
-            name: 'profile',
-            path: 'profile',
+            name: Routes.profile.name,
+            path: Routes.profile.name,
             builder: (context, state) => const ProfileScreen(),
           ),
           GoRoute(
-            name: 'search',
-            path: 'search',
+            name: Routes.search.name,
+            path: Routes.search.name,
             builder: (context, state) => const SearchScreen(),
           ),
         ],
@@ -62,14 +77,14 @@ class AppRouter {
     ],
     redirect: (context, state) {
       final signedIn = appStateManager.isSignedIn;
-      final signingIn = state.subloc == '/signIn';
-      if (!signedIn) return signingIn ? null : '/signIn';
+      final signingIn = state.subloc == Routes.signIn.path;
+      if (!signedIn) return signingIn ? null : Routes.signIn.path;
 
       final isOnboardingComplete = appStateManager.isOnboardingComplete;
-      final onboarding = state.subloc == '/onboarding';
-      if (!isOnboardingComplete) return onboarding ? null : '/onboarding';
+      final onboarding = state.subloc == Routes.onBoarding.path;
+      if (!isOnboardingComplete) return onboarding ? null : Routes.onBoarding.path;
 
-      if (signingIn || onboarding) return '/home';
+      if (signingIn || onboarding) return Routes.home.path;
       return null;
     },
     errorPageBuilder: (context, state) {

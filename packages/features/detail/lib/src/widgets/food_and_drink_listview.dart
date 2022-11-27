@@ -25,7 +25,7 @@ class FoodAndDrinkListView extends StatelessWidget {
             'Food',
             style: text.headline6,
           ),
-          const GapsWithDimens(h: 10),
+          const ResponsiveGaps(h: 10),
           Expanded(
             child: ListView.builder(
               primary: false,
@@ -40,12 +40,12 @@ class FoodAndDrinkListView extends StatelessWidget {
               },
             ),
           ),
-          const GapsWithDimens(h: 20),
+          const ResponsiveGaps(h: 20),
           Text(
             'Drink',
             style: text.headline6,
           ),
-          const GapsWithDimens(h: 10),
+          const ResponsiveGaps(h: 10),
           Expanded(
             child: ListView.builder(
               primary: false,

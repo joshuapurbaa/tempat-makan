@@ -42,7 +42,7 @@ class DetailContainerBorder extends StatelessWidget {
               ),
             ),
           ),
-          const GapsWithDimens(w: 10),
+          const ResponsiveGaps(w: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

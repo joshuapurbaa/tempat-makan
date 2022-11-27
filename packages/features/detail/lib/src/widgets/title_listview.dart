@@ -41,7 +41,7 @@ class TitleListView extends StatelessWidget {
                   Icons.star_rounded,
                   color: Colors.orange,
                 ),
-                const GapsWithDimens(w: 5),
+                const ResponsiveGaps(w: 5),
                 TextWithOverflow(
                   text: detail.rating.toString(),
                   style: text.subtitle1,

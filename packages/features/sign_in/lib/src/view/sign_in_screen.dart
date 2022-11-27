@@ -41,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 style: Theme.of(context).textTheme.headline3,
               ),
             ),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             Form(
               key: _formKey,
               child: Column(
@@ -56,7 +56,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     controller: _usernameController,
                   ),
-                  const GapsWithDimens(h: 20),
+                  const ResponsiveGaps(h: 20),
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
                     cursorColor: AppPalette.darkBlue,
@@ -71,7 +71,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ],
               ),
             ),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             FilledButton(
               onTap: () {
                 Provider.of<AppStateManager>(context, listen: false)
@@ -79,16 +79,16 @@ class _SignInScreenState extends State<SignInScreen> {
               },
               buttonType: 'Sign In',
             ),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             Center(
               child: Text(
                 AppStrings.or,
                 style: Theme.of(context).textTheme.caption,
               ),
             ),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             const LoginOption(),
-            const GapsWithDimens(h: 40),
+            const ResponsiveGaps(h: 40),
             TextRow(
               textRow1: AppStrings.loginTextRow1,
               textRow2: AppStrings.loginTextRow2,

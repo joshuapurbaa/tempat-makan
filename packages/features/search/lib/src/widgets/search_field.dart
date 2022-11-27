@@ -70,12 +70,12 @@ class _SearchFieldState extends State<SearchField> {
               ),
             ),
           ),
-          const GapsWithDimens(w: 20),
+          const ResponsiveGaps(w: 20),
           Icon(
             Icons.email_rounded,
             size: AppSize.size30,
           ),
-          const GapsWithDimens(w: 20),
+          const ResponsiveGaps(w: 20),
           Icon(
             Icons.notifications,
             size: AppSize.size30,
