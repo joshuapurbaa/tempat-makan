@@ -1,5 +1,6 @@
 export 'entities/auth/register.dart';
 export 'entities/auth/login.dart';
+export 'entities/auth/user.dart';
 export 'entities/restaurant/category.dart';
 export 'entities/restaurant/customer_reviews.dart';
 export 'entities/restaurant/drink.dart';

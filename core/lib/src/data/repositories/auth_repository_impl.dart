@@ -37,4 +37,22 @@ class AuthRepositoryImpl implements AuthRepository {
       return Left(TimeOutFailure(e.message));
     }
   }
+
+  @override
+  Future<Either<Failure, User>> user() async {
+    try {
+      final response = await authRemoteDatasource.user();
+      final data = response.data;
+      if (data?.firstName?.isEmpty ?? true) {
+        return const Left(
+          NoDataFailure('No user data'),
+        );
+      }
+      return Right(response.toEntity());
+    } on ServerException catch (e) {
+      return Left(
+        ServerFailure(e.message),
+      );
+    }
+  }
 }

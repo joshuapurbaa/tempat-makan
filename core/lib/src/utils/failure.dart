@@ -12,6 +12,13 @@ class ServerFailure extends Failure {
   const ServerFailure(String? message) : super(message);
 }
 
+class NoDataFailure extends Failure {
+  const NoDataFailure(String? message) : super(message);
+
+  @override
+  List<Object?> get props => [""];
+}
+
 class ConnectionFailure extends Failure {
   const ConnectionFailure(String message) : super(message);
 }

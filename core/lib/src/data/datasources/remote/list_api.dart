@@ -11,4 +11,5 @@ class ListApi {
   static const String _baseUrlAuth = 'https://reqres.in/';
   static const String register = '$_baseUrlAuth/api/register';
   static const String login = '$_baseUrlAuth/api/login';
+  static const String user = '$_baseUrlAuth/api/users/2';
 }

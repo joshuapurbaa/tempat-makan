@@ -8,6 +8,7 @@ import '../datasources.dart';
 abstract class AuthRemoteDatasource {
   Future<RegisterResponse> register(RegisterParams registerParams);
   Future<LoginResponse> login(LoginParams loginParams);
+  Future<UserResponse> user();
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDatasource {
@@ -49,10 +50,31 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDatasource {
       );
 
       final statusCode = response.statusCode;
-      print('Status code from remote data sources: $statusCode');
+      // print('Status code from remote data sources: $statusCode');
       final result = RegisterResponse.fromJson(json.decode(response.body));
-      print('Result register from remote data sources: $result');
+      // print('Result register from remote data sources: $result');
 
+      if (statusCode == 200) {
+        return result;
+      } else {
+        throw ServerException(result.error);
+      }
+    } on ServerException catch (e) {
+      throw ServerException(e.message);
+    }
+  }
+
+  @override
+  Future<UserResponse> user() async {
+    try {
+      final response = await _client.get(
+        Uri.parse(ListApi.user),
+      );
+
+      final statusCode = response.statusCode;
+      final result = UserResponse.fromJson(
+        json.decode(response.body),
+      );
       if (statusCode == 200) {
         return result;
       } else {

@@ -15,3 +15,4 @@ export 'remote/model/restaurant/restaurant_response.dart';
 export 'remote/auth_remote_data_source.dart';
 export 'remote/restaurant_remote_data_source.dart';
 export 'remote/list_api.dart';
+export 'remote/model/auth/user_response.dart';
